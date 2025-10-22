@@ -4,7 +4,6 @@ import Footer from "../components/Footer";
 import { motion } from "framer-motion";
 import Particles from "../components/Particles";
 import Blob from "../components/Blob";
-import PerfectRecruitment from "../components/PerfectRecruitment";
 import StrongRecruitment from "../components/StrongRecruitment";
 
 
@@ -31,7 +30,7 @@ export default function Recruitment() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="text-lg text-gray-600 max-w-3xl mx-auto"
+            className=" text-lg md:text-xl text-gray-700 leading-relaxed space-y-4"
           >
             This is where everything begins.  
             At StaffBridge, we believe the right people make all the difference. 
@@ -94,7 +93,6 @@ export default function Recruitment() {
         </section>
 
       {/* Nuevo bloque: Perfect Recruitment */}
-      <PerfectRecruitment />
             <StrongRecruitment />
 
 
@@ -115,14 +113,14 @@ export default function Recruitment() {
             className="text-lg max-w-2xl mx-auto mb-8"
           >
             From that first conversation to the moment you say 
-            <span className="italic"> “You’re hired”</span>, we’re with you every step of the way.
+            <span className="italic"> “You’re hired”</span>,  we’re with you every step of the way, because this is where strong teams start.
+Your next top performer might be just one conversation away.
+Partner with us to grow your team from day one, with the right people, ready to make an impact.
 
-Hiring top talent in today’s U.S. market is tough that’s why we created a risk-free recruitment solution that makes hiring simple.
 
-At StaffBridge, we specialize in connecting companies in the United States with highly skilled professionals from Latin America. We don’t just fill roles we help you build strong, culturally aligned teams that deliver real impact from day one.
           </motion.p>
           <motion.a
-            href="/contact"
+            href="/get-started"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3, duration: 0.6 }}

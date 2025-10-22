@@ -44,20 +44,13 @@ export default function About() {
           >
             <Blob className="absolute top-0 left-10 z-0 opacity-70" />
             <p className="relative z-10 text-lg md:text-xl text-gray-700 leading-relaxed">
-              We are a team of experts in our respective fields who have banded together
-              to open up Latin America to your human resource needs.
+              We are a team of proven experts, each bringing deep expertise in recruitment, HR strategy, and business consulting. Together, we have built a model that unlocks Latin America’s talent pool for companies ready to scale with confidence.
               <br /><br />
-              This About us section highlights why we are motivated to change how the
-              world sees the potential in Latin America. More than just an outsourcing
-              company, we act as your strategic partner recruiting and contracting top
-              talent while giving you full visibility and control over your team.
+              We don’t just fill roles, we design workforce strategies. Acting as your strategic advisors and partners, we help you structure, recruit, and retain nearshore teams with the same precision and transparency you would expect from your own in house operations. Every decision is guided by data, market insight, and a commitment to long term impact.
               <br /><br />
-              What sets us apart on this About us page is our commitment to transparency,
-              quality, and cultural alignment. With our expert guidance, we make expanding
-              your company easy, cost effective, and built for long term success.
+              Our approach is built on three pillars: transparency, quality, and cultural alignment. By combining consulting level expertise with operational execution, we make expansion into Latin America seamless, cost-effective, and positioned for sustainable growth.
               <br /><br />
-              Thank you for visiting our About us page and taking the time to learn how
-              StaffBridge can help you grow.
+              With us, you gain more than a service provider, you gain an extension of your leadership team, equipped with the market knowledge and strategic vision to help you succeed.
             </p>
           </motion.div>
           <motion.img
@@ -77,7 +70,7 @@ export default function About() {
   {/* Contenedor de imágenes */}
 <div className="flex flex-col gap-6 md:w-1/2 z-10"> {/* <- Cambié gap-4 a gap-6 */}
   <motion.img
-    src="/images/ourstory1.png"
+    src="/images/dave.JPG"
     alt="Our Story 1"
     className="rounded-2xl shadow-lg"
     initial={{ opacity: 0, x: -40 }}
@@ -85,7 +78,7 @@ export default function About() {
     transition={{ duration: 0.6 }}
   />
   <motion.img
-    src="/images/ourStory2.png"
+    src="/images/aboutUs.JPG"
     alt="Our Story 2"
     className="rounded-2xl shadow-lg"
     initial={{ opacity: 0, x: -40 }}
@@ -149,9 +142,9 @@ export default function About() {
           </h2>
           <div className="grid md:grid-cols-3 gap-8 text-center">
             {[
-              { title: "Excellence", text: "We strive to deliver the highest quality in everything we do." },
-              { title: "Collaboration", text: "Strong teamwork and cultural alignment are at the heart of our success." },
-              { title: "Innovation", text: "We embrace creativity and technology to stay ahead in the global market." },
+              { title: "Transparency", text: "We build trust through openness and honesty, giving clients full visibility and confidence in every step." },
+              { title: "Empowerment", text: "We enable people and teams to grow, take ownership, and perform at their best." },
+              { title: "Collaboration", text: "We work as one team, connecting companies and talent to achieve lasting success together." },
             ].map((value, i) => (
               <motion.div
                 key={i}

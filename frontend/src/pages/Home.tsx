@@ -33,9 +33,9 @@ const benefits = [
   const industries = [
     { title: "Logistics Coordination", img: "/images/Logistic Coordination.JPG" },
     { title: "Back Office", img: "/images/carrucel.png" },
-    { title: "Call Center", img: "/images/Call Center.JPG" },
+    { title: "Customer Center", img: "/images/Call Center.JPG" },
     { title: "Software Development", img: "/images/Software Developer.JPG" },
-    { title: "Executive Support", img: "/images/Executive Support.JPG" },
+    { title: "Executive Support", img: "/images/Executive5.png" },
   //  { title: "Engineering Design & 3D Modeling", img: "/images/Engineering Desing & 3D Modeling.JPG" },
   ];
 
@@ -83,10 +83,9 @@ const benefits = [
         <section className="relative z-10 py-12 px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Texto */}
           <div>
-            <h3 className="text-4xl font-light mb-1 text-black">Why Choose LATAM?</h3>
+            <h3 className="text-4xl font-bold mb-1 text-black ">Why Choose LATAM?</h3>
             <p className="text-lg text-gray-700 mb-4">
-              Latin America is a smart choice for building remote teams not just to reduce costs, but to scale sustainably with the right talent and 
-              <span className="font-semibold text-yellow-600"> cultural alignment.</span>
+              Latin America is a smart choice for building remote teams not just to reduce costs, but to scale sustainably with the right talent and cultural alignment.
             </p>
             <ul className="space-y-5">
               {benefits.map((benefit, i) => (

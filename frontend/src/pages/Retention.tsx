@@ -62,14 +62,14 @@ export default function Retention() {
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.7 }}
       >
-        {/* Imagen */}
-        <motion.img
-          src="/images/retention.png" // 👈 cambia la imagen por la tuya
-          alt="Team Retention"
-          className="rounded-2xl shadow-lg"
-          whileHover={{ scale: 1.03 }}
-          transition={{ type: "spring", stiffness: 120 }}
-        />
+{/* Imagen */}
+<motion.img
+  src="/images/cupCakes.png"
+  alt="Team Retention"
+  className="w-full max-w-3xl h-auto rounded-2xl shadow-lg object-contain mx-auto"
+  whileHover={{ scale: 1.03 }}
+  transition={{ type: 'spring', stiffness: 120 }}
+/>
 
         {/* Texto */}
         <motion.div

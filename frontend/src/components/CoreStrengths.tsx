@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { DollarSign, BarChart3, Rocket, Layers } from "lucide-react";
+import {  BarChart3, Rocket, Layers } from "lucide-react";
 import DualBlob from "../components/DualBlob";
 import Particles from "../components/Particles";
 
@@ -8,7 +8,7 @@ const items = [
   {
     title: "Saving",
     desc: "Cut costs without compromising quality. Our model reduces payroll, hiring, and admin expenses by up to 60%.",
-    icon: <DollarSign className="w-10 h-10 text-green-200" />,
+   // icon: <DollarSign className="w-10 h-10 text-green-200" />,
     bg: "bg-gradient-to-r from-purple-950 to-purple-950",
   },
   {
@@ -41,8 +41,7 @@ export default function CoreStrengths() {
             Our Core Strengths
           </h2>
           <p className="text-gray-600 mt-4 text-lg max-w-2xl mx-auto">
-            We provide the tools and talent that help your business grow,
-            scale, and streamline operations efficiently.
+            We provide the right infrastructure, environment, and talent to help your business scale, and operate seamlessly.
           </p>
         </div>
 

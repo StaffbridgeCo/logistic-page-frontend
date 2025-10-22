@@ -53,7 +53,7 @@ export default function FeaturesSection() {
           Modular System
         </h3>
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-          Key features and functionalities of our brokers
+          Key features and functionalities of our logistics experts
         </h2>
       </div>
       <Particles count={30} />

@@ -37,7 +37,7 @@ export default function CustomerServiceSection() {
             better salaries and training, ensuring your customers feel
             connected and valued.
           </p>
-          <p className="text-gray-600">
+          <p className="texte-lg text-gray-600">
             Whether you need basic call screening or full 24/7 coverage, 
             our C1 level English speakers deliver seamless communication,
             professional interactions, and custom solutions tailored to your business.
@@ -47,7 +47,7 @@ export default function CustomerServiceSection() {
           <ul className="mt-6 space-y-4 text-gray-700">
             <li className="flex items-start">
               <PhoneCall className="w-6 h-6 text-purple-600 mr-3 flex-shrink-0" />
-              <span>C1 Workforce: top tier English proficient representatives with accent neutral training.</span>
+              <span>C1 Workforce: top tier English proficient representatives.</span>
             </li>
             <li className="flex items-start">
               <Users className="w-6 h-6 text-purple-600 mr-3 flex-shrink-0" />
@@ -78,7 +78,7 @@ export default function CustomerServiceSection() {
           {/* Imagen principal */}
           <div className="relative group">
             <motion.img
-              src="/images/CustomerService1.png"
+              src="/images/customerService5.png"
               alt="Customer Service Team"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}

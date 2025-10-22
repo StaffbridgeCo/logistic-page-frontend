@@ -1,29 +1,46 @@
 "use client";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Blob from "../components/Blob";
 import Particles from "../components/Particles";
 import { Link } from "react-router-dom";
 
-// Datos de artículos
+// 🔹 Artículos (con The Nearshore primero)
 const articles = [
   {
     id: 1,
-    image: "/images/Customer.JPG", // Imagen local
+    image: "/images/near.png",
+    category: "Nearshore Insights",
+    date: "10.15.2025",
+    title: "The Nearshore Insider",
+    description:
+      "Your go-to source for real insights, strategies, and stories shaping the future of nearshore staffing.",
+    link: "/articles/article-Near",
+    linkedin:
+      "https://www.linkedin.com/pulse/turnover-unseen-supply-chain-disruption-staffbridge-inc-iftje/?trackingId=u5594bg1dck7F%2FluF3MoNg%3D%3D",
+  },
+  {
+    id: 2,
+    image: "/images/Customer.JPG",
     category: "Customer Service & Growth",
     date: "09.29.2025",
     title: "Customer Service: The (Often Forgotten) Engine of Growth",
     description:
       "In business, obsession with acquisition is everywhere. Companies pour millions into marketing campaigns, new sales tools, and bigger pipelines. Winning new customers feels like the ultimate goal.",
-    link: "/articles/customer-service-growth", // Ruta personalizada
+    link: "/articles/customer-service-growth",
     linkedin:
       "https://www.linkedin.com/pulse/turnover-unseen-supply-chain-disruption-staffbridge-inc-iftje/?trackingId=u5594bg1dck7F%2FluF3MoNg%3D%3D",
   },
-
 ];
 
 export default function ArticlePage() {
+  // 🔹 Forzar scroll al inicio al cargar
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 overflow-hidden relative">
       <Header />
@@ -55,62 +72,8 @@ export default function ArticlePage() {
         </motion.p>
       </section>
 
-      {/* Featured Article */}
-      <section className="relative max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-10 items-center z-10">
-        {/* Imagen local */}
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7 }}
-          className="w-full h-80 rounded-2xl overflow-hidden shadow-md"
-        >
-          <img
-            src="/images/near.png" // Imagen destacada
-            alt="Customer Service Growth"
-            className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-          />
-        </motion.div>
-
-        {/* Texto */}
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7 }}
-          className="flex flex-col gap-4"
-        >
-          <span className="text-sm font-medium text-purple-600 border border-purple-200 rounded-md px-2 py-1 w-fit">
-            Insightful Articles
-          </span>
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-            The Nearshore Insider
-          </h2>
-          <p className="text-gray-700 leading-relaxed">
-            Your go-to source for real insights, strategies, and stories shaping
-            the future of nearshore staffing.
-          </p>
-
-          {/* Botón principal */}
-          <Link
-            to="/articles/article-Near"
-            className="mt-4 inline-block bg-purple-600 text-white px-5 py-2 rounded-lg font-medium shadow hover:bg-purple-700 transition"
-          >
-            Read full article →
-          </Link>
-
-          {/* Botón LinkedIn */}
-          <a
-            href="https://www.linkedin.com/pulse/turnover-unseen-supply-chain-disruption-staffbridge-inc-iftje/?trackingId=u5594bg1dck7F%2FluF3MoNg%3D%3D"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-blue-600 text-white px-5 py-2 rounded-lg font-medium shadow hover:bg-blue-700 transition"
-          >
-            View on LinkedIn →
-          </a>
-        </motion.div>
-      </section>
-
-      {/* Articles Grid */}
-      <section className="relative max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 z-10">
+      {/* 🔹 Artículos lado a lado */}
+      <section className="relative max-w-7xl mx-auto px-6 py-16 flex flex-wrap justify-center gap-10 z-10">
         {articles.map((article, index) => (
           <motion.div
             key={article.id}
@@ -118,10 +81,10 @@ export default function ArticlePage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
             whileHover={{ scale: 1.03 }}
-            className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition cursor-pointer"
+            className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition cursor-pointer w-full md:w-[45%] lg:w-[40%]"
           >
             {/* Imagen */}
-            <div className="h-52 w-full overflow-hidden">
+            <div className="h-56 w-full overflow-hidden">
               <img
                 src={article.image}
                 alt={article.title}
@@ -132,7 +95,7 @@ export default function ArticlePage() {
             {/* Contenido */}
             <div className="p-6 flex flex-col gap-3">
               <span className="text-sm font-medium text-purple-600 border border-purple-200 rounded-md px-2 py-1 w-fit">
-                Insightful Articles
+                {article.category}
               </span>
               <span className="text-xs text-gray-500 flex justify-between">
                 <span>{article.category}</span>
@@ -144,10 +107,10 @@ export default function ArticlePage() {
               <p className="text-sm text-gray-600">{article.description}</p>
 
               {/* Botones */}
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-2 mt-2">
                 <Link
                   to={article.link}
-                  className="mt-2 text-purple-600 font-semibold hover:underline text-sm"
+                  className="text-purple-600 font-semibold hover:underline text-sm"
                 >
                   Read more →
                 </Link>

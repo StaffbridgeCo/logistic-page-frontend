@@ -5,19 +5,15 @@ import VideoTextMask from "../components/VideoTextMask";
 import { Card, CardContent } from "../components/ui/card";
 import { motion } from "framer-motion";
 import { Button } from "../components/ui/button";
+import { Link } from "react-router-dom";
 
-// Íconos
 // Íconos
 import {
   FaLaptopCode, FaServer, FaPaintBrush, FaMobileAlt, FaCloud,
   FaCode, FaTools, FaAppStoreIos, FaHandshake, FaShieldAlt,
   FaLightbulb, FaGlobe
 } from "react-icons/fa";
-
-import {
-  MdWork, MdOutlineAnalytics, MdPersonSearch
-} from "react-icons/md";
-
+import { MdWork, MdOutlineAnalytics, MdPersonSearch } from "react-icons/md";
 
 export default function SoftwareDeveloper() {
   return (
@@ -71,8 +67,8 @@ export default function SoftwareDeveloper() {
               desc: "We help you hire top remote developers who blend with your tech stack and company culture.",
             },
           ].map((item, i) => (
-            <Card key={i} className="rounded-2xl shadow-md hover:shadow-xl transition">
-              <CardContent className="p-6 text-center">
+            <Card key={i} className="rounded-2xl shadow-md hover:shadow-xl transition text-center">
+              <CardContent className="p-6">
                 <h4 className="text-xl font-semibold text-purple-800 mb-3">{item.title}</h4>
                 <p className="text-gray-600">{item.desc}</p>
               </CardContent>
@@ -102,11 +98,15 @@ export default function SoftwareDeveloper() {
               whileHover={{ scale: 1.05 }}
               className="bg-purple-50 rounded-xl p-6 shadow-md text-center"
             >
-              <div className="text-4xl mb-4 text-purple-700">{dev.icon}</div>
+              <div className="flex justify-center text-4xl mb-4 text-purple-700">{dev.icon}</div>
               <h4 className="text-lg font-semibold text-purple-800 mb-2">{dev.title}</h4>
-              <Button variant="outline" className="rounded-full">
-                GET STARTED
-              </Button>
+<Link
+  to="/get-started"
+  className="inline-block mt-4 px-4 py-2 border-2 border-purple-600 text-purple-700 rounded-full font-medium hover:bg-purple-600 hover:text-white transition"
+>
+  GET STARTED
+</Link>
+
             </motion.div>
           ))}
         </div>
@@ -139,9 +139,9 @@ export default function SoftwareDeveloper() {
             { step: <MdOutlineAnalytics />, title: "Interview", desc: "We collaborate to manage the interview and feedback process with you to ensure perfect fits." },
             { step: <FaHandshake />, title: "Hire & Employ", desc: "We seamlessly hire and, if needed, manage remote employment, payroll, benefits, and equity." },
           ].map((item, i) => (
-            <Card key={i} className="rounded-2xl shadow-md hover:shadow-xl transition">
-              <CardContent className="p-6 text-center">
-                <div className="text-4xl mb-4 text-purple-700">{item.step}</div>
+            <Card key={i} className="rounded-2xl shadow-md hover:shadow-xl transition text-center">
+              <CardContent className="p-6">
+                <div className="flex justify-center text-4xl mb-4 text-purple-700">{item.step}</div>
                 <h4 className="text-lg font-semibold text-purple-800 mb-2">{item.title}</h4>
                 <p className="text-gray-600 text-sm">{item.desc}</p>
               </CardContent>
@@ -164,9 +164,9 @@ export default function SoftwareDeveloper() {
             <motion.div
               key={i}
               whileHover={{ scale: 1.05 }}
-              className="bg-white rounded-xl p-6 shadow-md"
+              className="bg-white rounded-xl p-6 shadow-md text-center"
             >
-              <div className="text-4xl mb-4 text-purple-700">{item.icon}</div>
+              <div className="flex justify-center text-4xl mb-4 text-purple-700">{item.icon}</div>
               <h4 className="text-lg font-semibold text-purple-800 mb-2">{item.title}</h4>
               <p className="text-gray-600">{item.desc}</p>
             </motion.div>
@@ -175,27 +175,38 @@ export default function SoftwareDeveloper() {
       </section>
 
       {/* Fast track */}
-      <section className="py-20 bg-white px-6 text-center">
-        <h3 className="text-2xl font-bold text-purple-900 mb-8">Fast track your hiring process</h3>
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {[
-            { step: "1", title: "Priority onboarding team", desc: "We keep part of our top network ready to join urgent projects for new clients immediately." },
-            { step: "2", title: "Project deep dive", desc: "We learn your technical goals to ensure shortlisted developers match your stack and workflow." },
-            { step: "3", title: "AI powered sourcing", desc: "We combine AI tools and human expertise to quickly deliver top-tier, pre vetted candidates." },
-          ].map((item, i) => (
-            <Card key={i} className="rounded-2xl shadow-md hover:shadow-xl transition">
-              <CardContent className="p-6">
-                <div className="text-4xl font-bold text-purple-800 mb-4">{item.step}</div>
-                <h4 className="text-lg font-semibold text-purple-800 mb-2">{item.title}</h4>
-                <p className="text-gray-600">{item.desc}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-        <Button className="mt-10 bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-full text-lg">
-          GET MORE DETAILS
-        </Button>
-      </section>
+<section className="py-20 bg-white px-6 text-center">
+  <h3 className="text-2xl font-bold text-purple-900 mb-8">
+    Fast track your hiring process
+  </h3>
+  <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+    {[
+      { step: "1", title: "Priority onboarding team", desc: "We keep part of our top network ready to join urgent projects for new clients immediately." },
+      { step: "2", title: "Project deep dive", desc: "We learn your technical goals to ensure shortlisted developers match your stack and workflow." },
+      { step: "3", title: "AI powered sourcing", desc: "We combine AI tools and human expertise to quickly deliver top-tier, pre vetted candidates." },
+    ].map((item, i) => (
+      <Card key={i} className="rounded-2xl shadow-md hover:shadow-xl transition text-center">
+        <CardContent className="p-6">
+          <div className="flex justify-center text-4xl font-bold text-purple-800 mb-4">
+            {item.step}
+          </div>
+          <h4 className="text-lg font-semibold text-purple-800 mb-2">{item.title}</h4>
+          <p className="text-gray-600">{item.desc}</p>
+        </CardContent>
+      </Card>
+    ))}
+  </div>
+  {/* Cambié Button por <a> */}
+  <a
+    href="https://staffbridge.co/get-started"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-block mt-10 bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-full text-lg"
+  >
+    GET MORE DETAILS
+  </a>
+</section>
+
 
       <Footer />
     </>

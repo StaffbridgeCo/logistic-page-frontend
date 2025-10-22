@@ -24,7 +24,7 @@ const teamMembers = [
   },
   {
     id: "felipe-sanchez",
-    name: "Felipe Sanchez",
+    name: "Felipe Sánchez ",
     role: "HR & Recruitment Manager",
     img: "/images/pipe.jpg",
   },
@@ -45,15 +45,17 @@ export default function TeamSection() {
           className="text-4xl font-bold text-purple-900 mb-4"
         >
           Our Professionals
+
         </motion.h2>
+                  <p>Meet the team of experts behind your dream team.
+</p>
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.6 }}
           className="text-gray-600 max-w-2xl mx-auto mb-12"
         >
-          Meet the team of experts driving success with passion, innovation,
-          and cultural alignment.
+
         </motion.p>
 
         {/* Grid de miembros */}

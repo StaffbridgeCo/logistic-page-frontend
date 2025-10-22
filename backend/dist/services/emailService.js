@@ -4,16 +4,20 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.sendContactEmail = sendContactEmail;
+// backend/src/services/emailService.ts
 const nodemailer_1 = __importDefault(require("nodemailer"));
 const config_1 = __importDefault(require("../config"));
 async function sendContactEmail(payload) {
     const transporter = nodemailer_1.default.createTransport({
         host: config_1.default.smtp.host,
-        port: config_1.default.smtp.port,
-        secure: true, // Gmail con 465 siempre requiere secure true
+        port: Number(config_1.default.smtp.port),
+        secure: false, // 👈 usar false con puerto 587 (STARTTLS)
         auth: {
             user: config_1.default.smtp.user,
             pass: config_1.default.smtp.pass,
+        },
+        tls: {
+            rejectUnauthorized: false, // evita errores de certificado locales
         },
     });
     const html = `
@@ -28,7 +32,7 @@ async function sendContactEmail(payload) {
         to: config_1.default.toEmail,
         subject: `New contact from ${payload.name} (${payload.company ?? "No company"})`,
         html,
-        replyTo: payload.email
+        replyTo: payload.email,
     });
     return info;
 }

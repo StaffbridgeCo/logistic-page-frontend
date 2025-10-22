@@ -31,7 +31,7 @@ export default function Header() {
     "IT Operation",
     "Executive Support",
     // "Engineering Design & 3D Modeling",
-    "Software Developer",
+    //"Software Developer",
   ];
 
   const industriesRoutes: Record<string, string> = {
@@ -41,7 +41,7 @@ export default function Header() {
     "IT Operation": "/it-operation",
     "Executive Support": "/executive-support",
     // "Engineering Design & 3D Modeling": "/engineering-design",
-    "Software Developer": "/software-developer",
+//"Software Developer": "/software-developer",
   };
 
   const allInOneSubItems = ["Recruitment", "Office Space", "Retention", "Payroll"];
@@ -174,9 +174,9 @@ export default function Header() {
           <Link
             to="/article-page"
             className="ml-6 px-5 py-2 rounded-full font-semibold shadow-md 
-                       bg-purple-600 text-white border border-purple-600
+                       bg-purple-950 text-white border border-purple-950
                        transition duration-300
-                       hover:bg-white hover:text-purple-600 hover:border-purple-600
+                       hover:bg-white hover:text-purple-950 hover:border-purple-950
                        hover:shadow-[0_0_15px_rgba(147,51,234,0.6)]"
           >
             Articles
@@ -188,7 +188,7 @@ export default function Header() {
             className="ml-4 px-5 py-2 rounded-full font-semibold shadow-md 
                        bg-black text-white border border-black
                        transition duration-300
-                       hover:bg-white hover:text-purple-600 hover:border-purple-600
+                       hover:bg-white hover:text-purple-950 hover:border-purple-950
                        hover:shadow-[0_0_15px_rgba(147,51,234,0.6)]"
           >
             GET STARTED

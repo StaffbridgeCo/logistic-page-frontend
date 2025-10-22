@@ -20,9 +20,9 @@ const teamMembers = [
     name: "Luisa Sánchez",
     role: "Chief Operations Officer",
     img: "/images/luisa.png",
-    experience: "12+ Years",
+    experience: "7 Years",
     email: "luisa@staffbridge.com",
-    phone: "+1 (800) 234-5678",
+    phone: "+1 (956) 284-6334",
     bio: "Luisa graduated with a degree in International Business from the University of Medellin. With 5 years of experience in the logistics and BPO industries, Luisa has developed expertise ranging from international market operation for a wide range of US-based Companies to freight dispatch within the United States. As a leader of BPO operations, Luisa fosters strong teamwork, ensuring that projects are completed successfully. Due to her dedication, responsibility, and commitment to both company and client success, customers enjoy working with Luisa. Always approachable, respectful, and positive, Luisa is focused on delivering the best outcomes for everyone involved.",
   },
   {
@@ -37,7 +37,7 @@ const teamMembers = [
   },
   {
     id: "felipe-sanchez",
-    name: "Felipe Sanchez",
+    name: "Felipe Sánchez",
     role: "HR & Recruitment Manager",
     img: "/images/pipe.jpg",
     experience: "8+ Years",

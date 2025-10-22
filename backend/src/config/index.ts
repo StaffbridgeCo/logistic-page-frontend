@@ -1,8 +1,9 @@
+//backend/src/config/index.ts
 import dotenv from "dotenv";
 dotenv.config();
 
 const config = {
-  port: process.env.PORT || 4000,
+  port: Number(process.env.PORT) || 4000,  // ✅ convertir a number
   smtp: {
     host: process.env.SMTP_HOST || "",
     port: Number(process.env.SMTP_PORT || 587),
@@ -13,5 +14,6 @@ const config = {
   toEmail: process.env.TO_EMAIL || "",
   frontendUrl: process.env.FRONTEND_URL || "*"
 };
+
 
 export default config;

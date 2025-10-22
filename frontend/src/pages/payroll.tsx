@@ -63,7 +63,7 @@ export default function Payroll() {
       >
         {/* Imagen */}
         <motion.img
-          src="/images/payroll.pngy " // 👈 coloca tu imagen aquí
+          src="/images/payroll.png" // 👈 coloca tu imagen aquí
           alt="Payroll process"
           className="rounded-2xl shadow-lg"
           whileHover={{ scale: 1.03 }}

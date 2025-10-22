@@ -16,36 +16,47 @@ type Step = {
 const steps: Step[] = [
   {
     id: 1,
-    title: "Import delivery details instantly",
+    title: "Understanding your logistics needs",
     description:
-      "In just a few seconds, drivers or dispatchers can set up all the data needed to build a route. You choose whether to provide full details or keep it simple both work seamlessly.",
+      "Our brokers start by analyzing your company’s logistics processes, goals, and challenges to design a personalized coordination strategy.",
     bullets: [
-      "Import hundreds of stops at once by uploading a CSV/XLSX file",
-      "Integrate with external platforms using APIs or no-code connectors",
+      "Review current routes, carriers, and delivery structures.",
+      "Identify areas to reduce time, cost, and communication gaps.",
     ],
-    image: "/images/data.png",
+    image: "/images/Back Office.JPG",
   },
   {
     id: 2,
-    title: "Generate perfectly optimized delivery routes",
+    title: "Coordinating daily operations",
     description:
-      "Cut down hours of planning with a single click by building the most efficient routes. Structure your operations effortlessly with delivery zones and constraints.",
+      "Once the plan is set, our brokers take over the daily coordination ensuring your carriers, drivers, and customers are always aligned.",
     bullets: [
-      "Plan routes that adapt to traffic, time windows, and vehicle capacities",
-      "Personalize each stop with flexible configuration options",
+      "Manage schedules, pickups, and deliveries efficiently.",
+      "Communicate directly with drivers and clients to ensure smooth operations.",
     ],
-    image: "/images/map.png",
+    image: "/images/Customer1.png",
   },
   {
     id: 3,
-    title: "Dispatch & real time tracking",
+    title: "Monitoring and resolving issues",
     description:
-      "Share routes with drivers instantly and keep your entire team aligned through live ETAs and continuous status updates.",
+      "During the process, our brokers continuously monitor logistics activity and proactively resolve any delay or incident that may occur.",
     bullets: [
-      "Send routes in one tap via mobile app or SMS link",
-      "Monitor progress in real time with delivery proof included",
+      "Provide real-time updates to your team and customers.",
+      "Handle exceptions or urgent deliveries with immediate response.",
     ],
-    image: "/images/cell-map.png",
+    image: "/images/CustomerService1.png",
+  },
+  {
+    id: 4,
+    title: "Reporting and optimization",
+    description:
+      "After each cycle, our brokers provide clear reports and actionable recommendations to optimize performance and improve future operations.",
+    bullets: [
+      "Summarize delivery results and highlight key metrics.",
+      "Suggest improvements for efficiency, cost reduction, and service quality.",
+    ],
+    image: "/images/customerService5.png",
   },
 ];
 
@@ -57,7 +68,6 @@ const fadeUp = {
 export default function StepTimeline() {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Progreso del scroll solo dentro de los pasos
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start center", "end center"],
@@ -76,7 +86,7 @@ export default function StepTimeline() {
             Step by step workflow
           </h3>
           <h2 className="mt-2 text-3xl font-bold text-gray-900 md:text-4xl">
-            From data to routes sent by our brokers
+            How our brokers manage your logistics from start to finish
           </h2>
         </div>
 
@@ -84,9 +94,9 @@ export default function StepTimeline() {
         <DualBlob className="absolute -bottom-20 -left-5 opacity-80" />
         <Particles count={30} />
 
-        {/* Timeline con pasos */}
+        {/* Timeline */}
         <div ref={containerRef} className="relative space-y-28">
-          {/* Línea + Punto */}
+          {/* Línea y punto */}
           <div className="pointer-events-none absolute inset-y-0 left-1/2 hidden w-px -translate-x-1/2 lg:block">
             <div className="absolute inset-0 bg-purple-200" />
             <motion.div
@@ -121,7 +131,7 @@ export default function StepTimeline() {
                 </div>
               </motion.div>
 
-              {/* Nodo con número */}
+              {/* Nodo */}
               <div className="relative order-2 hidden justify-center lg:flex">
                 <div className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md ring-2 ring-purple-500">
                   <span className="font-semibold text-purple-700">
@@ -139,9 +149,7 @@ export default function StepTimeline() {
                 className="order-3"
               >
                 <div className="rounded-2xl border border-gray-200 bg-purple-800 p-8 shadow-lg">
-                  <h3 className="text-2xl font-bold text-white">
-                    {step.title}
-                  </h3>
+                  <h3 className="text-2xl font-bold text-white">{step.title}</h3>
                   <p className="mt-3 text-white">{step.description}</p>
 
                   <div className="mt-6 space-y-3">
@@ -160,7 +168,7 @@ export default function StepTimeline() {
           ))}
         </div>
 
-        {/* Imagen + Botón final */}
+        {/* Imágenes finales */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -168,11 +176,18 @@ export default function StepTimeline() {
           viewport={{ once: true, amount: 0.3 }}
           className="mt-20 flex flex-col items-center space-y-10"
         >
-          <img
-            src="/images/broker.png"
-            alt="Finish illustration"
-            className="max-w-md w-full rounded-2xl shadow-lg"
-          />
+          <div className="flex flex-wrap justify-center gap-6">
+            <img
+              src="/images/broker.png"
+              alt="Broker team"
+              className="max-w-md w-full rounded-2xl shadow-lg"
+            />
+            <img
+              src="/images/logistica.png"
+              alt="Logistics operations"
+              className="max-w-md w-full rounded-2xl shadow-lg"
+            />
+          </div>
 
           <Link
             to="/get-started"

@@ -58,7 +58,7 @@ export default function LogisticsSection() {
           {/* Imagen grande (dispatcher) con tooltip */}
           <div className="relative group">
             <motion.img
-              src="/images/dispatcher.png"
+              src="/images/brokers.png"
               alt="Dispatcher preview"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -81,7 +81,7 @@ export default function LogisticsSection() {
           {/* Imagen pequeña (driver) con tooltip */}
           <div className="relative group bottom-1 left-6 lg:left-10">
             <motion.img
-              src="/images/driver.jpg"
+              src="/images/Logistic Coordination.JPG"
               alt="Driver preview"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}

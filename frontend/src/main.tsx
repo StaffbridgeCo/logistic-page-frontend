@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop"; // 👈 importa tu componente aquí
+
 import App from "./App";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -21,11 +23,14 @@ import SoftwareDeveloper from "./pages/SoftwareDeveloper";
 import ArticlePage from "./pages/ArticlePage";
 import ArticleDetailPage from "./pages/ArticleDetailPage";
 import ArticleNearshorePage from "./pages/ArticleNearshore";
+import LifeAtStaffbridge from "./pages/LifeAtStaffbridge";
+import OurOffices from "./pages/OurOffices";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <BrowserRouter>
+          <ScrollToTop /> {/* 👈 esto es lo que hace que vuelva al tope */}
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/home" element={<Home />} />
@@ -47,6 +52,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Route path="/article-page" element={<ArticlePage />} /> 
         <Route path="/articles/customer-service-growth" element={<ArticleDetailPage />} />
         <Route path="/articles/article-Near" element={<ArticleNearshorePage />} /> 
+<Route path="/life-StaffBridge" element={<LifeAtStaffbridge />} />
+<Route path="/our-offices" element={<OurOffices />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

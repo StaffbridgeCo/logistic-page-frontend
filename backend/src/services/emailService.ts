@@ -1,17 +1,25 @@
+// backend/src/services/emailService.ts
 import nodemailer from "nodemailer";
 import config from "../config";
 
-export async function sendContactEmail(payload: { name: string; email: string; company?: string; message?: string; }) {
-const transporter = nodemailer.createTransport({
-  host: config.smtp.host,
-  port: config.smtp.port,
-  secure: true, // Gmail con 465 siempre requiere secure true
-  auth: {
-    user: config.smtp.user,
-    pass: config.smtp.pass,
-  },
-});
-
+export async function sendContactEmail(payload: {
+  name: string;
+  email: string;
+  company?: string;
+  message?: string;
+}) {
+  const transporter = nodemailer.createTransport({
+    host: config.smtp.host,
+    port: Number(config.smtp.port),
+    secure: false, // 👈 usar false con puerto 587 (STARTTLS)
+    auth: {
+      user: config.smtp.user,
+      pass: config.smtp.pass,
+    },
+    tls: {
+      rejectUnauthorized: false, // evita errores de certificado locales
+    },
+  });
 
   const html = `
     <h2>New contact from StaffBridge site</h2>
@@ -26,7 +34,7 @@ const transporter = nodemailer.createTransport({
     to: config.toEmail,
     subject: `New contact from ${payload.name} (${payload.company ?? "No company"})`,
     html,
-    replyTo: payload.email
+    replyTo: payload.email,
   });
 
   return info;

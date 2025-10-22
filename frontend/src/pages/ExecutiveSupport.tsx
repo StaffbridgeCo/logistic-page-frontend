@@ -48,7 +48,7 @@ export default function ExecutiveSupport() {
 
       {/* Video con texto animado */}
       <VideoTextMask
-        videoSrc="/videos/Logistics.mp4" // 👈 pon aquí tu video para Executive Support
+        videoSrc="/videos/Logistics.mp4"
         topText="EXECUTIVE"
         bottomText="SUPPORT"
       />
@@ -61,7 +61,7 @@ export default function ExecutiveSupport() {
         {/* Texto */}
         <div className="space-y-6 z-10">
           <h2 className="text-4xl lg:text-5xl font-bold text-purple-900 leading-tight">
-            High-Level Executive Support to Empower Your Leadership
+            High Level Executive Support to Empower Your Leadership
           </h2>
           <p className="text-lg text-gray-600">
             At StaffBridge, we provide high level Executive Support designed to
@@ -69,32 +69,72 @@ export default function ExecutiveSupport() {
             assistants seamlessly integrate into your operations, delivering
             both strategic insight and administrative excellence.
           </p>
-          <p className="text-gray-600">
+          <p className="text-lg text-gray-600">
             They don’t just take tasks off your plate they become a true
             extension of your leadership, helping you stay focused, agile, and
             in control of your time.
           </p>
 
           {/* CTA */}
-          <motion.button
+          <motion.a
+            href="https://staffbridge.co/get-started"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="mt-8 px-6 py-3 bg-purple-700 text-white font-semibold rounded-xl shadow-md hover:bg-purple-800 transition"
+            className="mt-8 inline-block px-6 py-3 bg-purple-700 text-white font-semibold rounded-xl shadow-md hover:bg-purple-800 transition"
           >
             Get Started
-          </motion.button>
+          </motion.a>
         </div>
 
-        {/* Imagen (puedes cambiarla por algo representativo de ejecutivos) */}
+        {/* Imágenes superpuestas (2 imágenes con animación) */}
         <div className="relative flex justify-center lg:justify-end items-center">
-          <motion.img
-            src="/images/ExecutiveSupport1.JPG"
-            alt="Executive Support"
-            initial={{ opacity: 0, x: 80 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="w-[350px] lg:w-[450px] rounded-2xl shadow-xl hover:scale-105 transition-transform duration-500"
-          />
+          {/* Imagen principal grande */}
+          <div className="relative group">
+            <motion.img
+              src="/images/ExecutiveSupport1.JPG"
+              alt="Executive Collaboration"
+              initial={{ opacity: 0, x: 60 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="w-[350px] lg:w-[420px] rounded-2xl shadow-xl 
+                         z-10 transition-all duration-500 ease-out
+                         hover:z-30 hover:scale-105 hover:shadow-2xl"
+            />
+            <div
+              className="absolute -top-12 left-1/2 -translate-x-1/2 
+                         bg-gray-900 text-white text-sm font-medium px-3 py-1.5 rounded-lg
+                         opacity-0 group-hover:opacity-100 transition-opacity duration-300
+                         after:content-[''] after:absolute after:top-full after:left-1/2 after:-translate-x-1/2
+                         after:border-8 after:border-transparent after:border-t-gray-900"
+            >
+              Executive Collaboration
+            </div>
+          </div>
+
+          {/* Imagen secundaria más pequeña superpuesta */}
+          <div className="relative group bottom-1 left-6 lg:left-10">
+            <motion.img
+              src="/images/executiveSupport2.png"
+              alt="Professional Teamwork"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.3 }}
+              className="w-[180px] lg:w-[220px] rounded-2xl shadow-lg 
+                         z-20 transition-all duration-500 ease-out 
+                         hover:z-40 hover:scale-105 hover:shadow-2xl"
+            />
+            <div
+              className="absolute -top-12 left-1/2 -translate-x-1/2 
+                         bg-gray-900 text-white text-sm font-medium px-3 py-1.5 rounded-lg
+                         opacity-0 group-hover:opacity-100 transition-opacity duration-300
+                         after:content-[''] after:absolute after:top-full after:left-1/2 after:-translate-x-1/2
+                         after:border-8 after:border-transparent after:border-t-gray-900"
+            >
+              Professional Teamwork
+            </div>
+          </div>
         </div>
       </div>
 
@@ -129,8 +169,8 @@ export default function ExecutiveSupport() {
           ))}
         </div>
       </section>
-                    <Footer />
 
+      <Footer />
     </div>
   );
 }

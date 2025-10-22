@@ -78,9 +78,18 @@ export default function GetStarted() {
             </p>
 
             <ul className="space-y-3 text-gray-700 font-medium">
-              <li>✅ Streamline operations with smart automation</li>
-              <li>✅ Gain insights with detailed analytics</li>
-              <li>✅ Dedicated support team for your growth</li>
+              <li className="flex items-start">
+                <span className="text-purple-600 font-bold mr-2">•</span>
+                Streamline operations with smart automation
+              </li>
+              <li className="flex items-start">
+                <span className="text-purple-600 font-bold mr-2">•</span>
+                Gain insights with detailed analytics
+              </li>
+              <li className="flex items-start">
+                <span className="text-purple-600 font-bold mr-2">•</span>
+                Dedicated support team for your growth
+              </li>
             </ul>
           </motion.div>
 
@@ -92,7 +101,7 @@ export default function GetStarted() {
             className="bg-white rounded-xl shadow-md p-8"
           >
             <h2 className="text-2xl font-semibold text-gray-900 mb-6">
-              Get Started Today 🚀
+              Get Started Today
             </h2>
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
@@ -172,7 +181,7 @@ export default function GetStarted() {
                 transition={{ duration: 0.4 }}
                 className="absolute bottom-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg font-medium"
               >
-                ✅ Message sent successfully!
+                Message sent successfully!
               </motion.div>
             )}
           </AnimatePresence>

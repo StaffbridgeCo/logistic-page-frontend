@@ -2,11 +2,11 @@
 import { motion, useAnimation, useMotionValue, useTransform, animate } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import { Users, DollarSign, Clock, Shield } from "lucide-react";
+import { Users, Clock, Shield, BarChart } from "lucide-react";
 
 const stats = [
   { icon: <Users className="w-6 h-6 text-purple-200" />, value: 95, suffix: "%", label: "Team Retention" },
-  { icon: <DollarSign className="w-6 h-6 text-purple-200" />, value: 60, suffix: "%", label: "Payroll Cost Reduction" },
+  { icon: <BarChart className="w-6 h-6 text-purple-200" />, value: 60, suffix: "%", label: "Payroll Cost Reduction" },
   { icon: <Clock className="w-6 h-6 text-purple-200" />, value: 2, suffix: " Weeks", label: "Time to Onboard" },
   { icon: <Shield className="w-6 h-6 text-purple-200" />, value: 100, suffix: "%", label: "Client Transparency" },
 ];

@@ -6,7 +6,7 @@ export default function StrongRecruitment() {
     <section className="grid md:grid-cols-2 gap-12 items-center mb-20 bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-10">
       {/* Imagen a la izquierda */}
       <motion.img
-        src="/images/hr.png" // 👈 pon aquí tu imagen
+        src="/images/todos.JPG" // 👈 pon aquí tu imagen
         alt="Strong Recruitment Process"
         className="rounded-2xl shadow-lg"
         initial={{ opacity: 0, x: -40 }}

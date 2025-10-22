@@ -3,13 +3,10 @@
 import { motion } from "framer-motion";
 import {
   Users,
-  AppWindow,
-  Wrench,
-  BarChart3,
+  Headphones,
+  Network,
+  ShieldCheck,
   DollarSign,
-  ServerCog,
-  Cloud,
-  Smartphone,
 } from "lucide-react";
 import Particles from "../components/Particles";
 import Blob from "../components/Blob";
@@ -20,53 +17,36 @@ import Footer from "../components/Footer";
 export default function ItOperations() {
   const services = [
     {
-      icon: <Users className="w-8 h-8 text-purple-600" />,
-      title: "Employee Share Program",
+      icon: <Users className="w-10 h-10 text-purple-600 mb-4" />,
+      title: "IT Staff Augmentation",
       description:
-        "Collaborate with us to brainstorm ideas and develop solutions quickly without needing a full time hire. Gain access to top tier developers cost effectively.",
+        "Flexible access to qualified IT professionals for ongoing operations, system monitoring, or maintenance tasks.",
     },
     {
-      icon: <AppWindow className="w-8 h-8 text-purple-600" />,
-      title: "Custom Application Development",
+      icon: <Headphones className="w-10 h-10 text-purple-600 mb-4" />,
+      title: "Technical Support & Helpdesk",
       description:
-        "We use Agile methodologies with sprint planning, stand ups, and reviews to deliver high quality software while adapting to your needs.",
+        "Skilled support staff to handle user issues, troubleshoot incidents, and maintain service uptime.",
     },
     {
-      icon: <Wrench className="w-8 h-8 text-purple-600" />,
-      title: "QA Engineers & Testing",
+      icon: <Network className="w-10 h-10 text-purple-600 mb-4" />,
+      title: "Infrastructure & Network Support",
       description:
-        "Our QA services ensure top notch performance with scalable engagement models, offering flexibility and cost savings.",
+        "Personnel specialized in maintaining servers, networks, and connectivity for stable operations.",
     },
     {
-      icon: <BarChart3 className="w-8 h-8 text-purple-600" />,
-      title: "SEO",
+      icon: <ShieldCheck className="w-10 h-10 text-purple-600 mb-4" />,
+      title: "IT Security & Compliance",
       description:
-        "Our SEO experts use AI tools to analyze keywords and niches, ensuring your business stands out with sustained visibility.",
+        "Professionals who monitor and secure systems, ensuring compliance with best practices and policies.",
     },
-    {
-      icon: <DollarSign className="w-8 h-8 text-purple-600" />,
-      title: "Instant Savings",
-      description:
-        "Save 40–60% immediately by outsourcing to our team. Fast ROI and reliable delivery backed by continuous support.",
-    },
-    {
-      icon: <ServerCog className="w-8 h-8 text-purple-600" />,
-      title: "Horizontals",
-      description:
-        "We deliver turnkey IT solutions for Finance, HR, and Operations with guaranteed reliability and 24/7 availability.",
-    },
-    {
-      icon: <Cloud className="w-8 h-8 text-purple-600" />,
-      title: "Transitioning to the Cloud",
-      description:
-        "We specialize in Lift and Shift, Replatforming, or full Re architecture with automation tools and cost saving strategies.",
-    },
-    {
-      icon: <Smartphone className="w-8 h-8 text-purple-600" />,
-      title: "UX/UI and Web Design",
-      description:
-        "We design engaging, user friendly interfaces that align with your brand, ensuring seamless experiences for your customers.",
-    },
+{
+  icon: <DollarSign className="w-10 h-10 text-purple-600 mb-4" />,
+  title: "Cost Optimization through Nearshore Staffing",
+  description:
+    "Optimize Your Costs with Nearshore Staffing Cut up to 60% of IT operational expenses by hiring nearshore talent.",
+},
+
   ];
 
   return (
@@ -76,7 +56,7 @@ export default function ItOperations() {
 
       {/* Video con texto animado */}
       <VideoTextMask
-        videoSrc="/videos/Logistics.mp4" // 👈 pon aquí tu video
+        videoSrc="/videos/Logistics.mp4"
         topText="IT"
         bottomText="OPERATIONS"
       />
@@ -87,37 +67,78 @@ export default function ItOperations() {
 
       {/* Hero Section */}
       <div className="relative w-full max-w-7xl mx-auto mt-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        {/* Texto */}
+        {/* Columna izquierda - Texto */}
         <div className="space-y-6 z-10">
           <h1 className="text-4xl lg:text-5xl font-bold text-purple-900 leading-tight">
             Your one stop shop for seamless IT operations and digital
             transformation!
           </h1>
           <p className="text-lg text-gray-600">
-            Achieve significant cost savings by hiring our top tier software
-            developers and IT operations experts. We tailor software solutions
-            and IT support to your specific needs, ensuring success through
-            expertise, seamless integration, and optimal performance.
+            Strengthen your IT operations with experienced professionals ready
+            to support your infrastructure, security, and daily technology
+            needs. We ensure scalability, reliability, and efficiency for your
+            organization.
           </p>
-          <motion.button
+
+          <motion.a
+            href="https://staffbridge.co/get-started"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="mt-6 px-6 py-3 bg-purple-700 text-white font-semibold rounded-xl shadow-md hover:bg-purple-800 transition"
+            className="inline-block mt-6 px-6 py-3 bg-purple-700 text-white font-semibold rounded-xl shadow-md hover:bg-purple-800 transition"
           >
             Get Started
-          </motion.button>
+          </motion.a>
         </div>
 
-        {/* Imagen */}
+        {/* Columna derecha - Imágenes */}
         <div className="relative flex justify-center lg:justify-end items-center">
-          <motion.img
-            src="/images/it2.png"
-            alt="IT Operations"
-            initial={{ opacity: 0, x: 80 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="w-[350px] lg:w-[450px] rounded-2xl shadow-xl hover:scale-105 transition-transform duration-500"
-          />
+          {/* Imagen principal */}
+          <div className="relative group">
+            <motion.img
+              src="/images/carrucel.png"
+              alt="IT Operations Team"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="w-[350px] lg:w-[420px] rounded-2xl shadow-xl 
+                         z-10 transition-all duration-500 ease-out
+                         hover:z-30 hover:scale-105 hover:shadow-2xl"
+            />
+            <div
+              className="absolute -top-12 left-1/2 -translate-x-1/2 
+                         bg-gray-900 text-white text-sm font-medium px-3 py-1.5 rounded-lg
+                         opacity-0 group-hover:opacity-100 transition-opacity duration-300
+                         after:content-[''] after:absolute after:top-full after:left-1/2 after:-translate-x-1/2
+                         after:border-8 after:border-transparent after:border-t-gray-900"
+            >
+              IT Experts at Work
+            </div>
+          </div>
+
+          {/* Imagen secundaria */}
+          <div className="relative group bottom-1 left-6 lg:left-10">
+            <motion.img
+              src="/images/it2.png"
+              alt="Server Infrastructure"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.3 }}
+              className="w-[180px] lg:w-[220px] rounded-2xl shadow-lg 
+                         z-20 transition-all duration-500 ease-out 
+                         hover:z-40 hover:scale-105 hover:shadow-2xl"
+            />
+            <div
+              className="absolute -top-12 left-1/2 -translate-x-1/2 
+                         bg-gray-900 text-white text-sm font-medium px-3 py-1.5 rounded-lg
+                         opacity-0 group-hover:opacity-100 transition-opacity duration-300
+                         after:content-[''] after:absolute after:top-full after:left-1/2 after:-translate-x-1/2
+                         after:border-8 after:border-transparent after:border-t-gray-900"
+            >
+              Smart Infrastructure
+            </div>
+          </div>
         </div>
       </div>
 
@@ -130,8 +151,7 @@ export default function ItOperations() {
             transition={{ duration: 0.6 }}
             className="text-4xl font-bold text-purple-900 mb-6"
           >
-            Multiple benefits from our IT Operations support and Digital
-            Transformation services
+            IT Operations Support Services
           </motion.h2>
         </div>
 
@@ -142,9 +162,11 @@ export default function ItOperations() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="p-8 bg-white shadow-md rounded-2xl hover:shadow-xl transition"
+              className="p-8 bg-white shadow-md rounded-2xl hover:shadow-xl transition text-center flex flex-col items-center"
             >
-              <div className="mb-4">{service.icon}</div>
+              <div className="flex justify-center items-center">
+                {service.icon}
+              </div>
               <h3 className="text-xl font-semibold text-purple-800 mb-2">
                 {service.title}
               </h3>
@@ -152,10 +174,9 @@ export default function ItOperations() {
             </motion.div>
           ))}
         </div>
-        
       </section>
-                    <Footer />
 
+      <Footer />
     </div>
   );
 }

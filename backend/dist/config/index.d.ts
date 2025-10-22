@@ -1,5 +1,5 @@
 declare const config: {
-    port: string | number;
+    port: number;
     smtp: {
         host: string;
         port: number;
