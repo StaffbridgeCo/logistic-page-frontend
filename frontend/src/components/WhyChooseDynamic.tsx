@@ -39,11 +39,12 @@ export default function WhyChooseDynamic() {
             Empowering Talent Through Culture and Cost Efficiency
           </h2>
           <p className="text-gray-700 leading-relaxed">
-            At StaffBridge, we combine a competitive cost structure with a work culture
-            that truly engages. Our industry low management fees allow you to allocate
-            more of your budget directly to your team, offering salaries that are highly
-            attractive in their local markets. This helps you attract and retain top-tier
-            talent.
+            At StaffBridge, we combine a competitive cost model with a work culture that truly engages.
+
+Thanks to the lower cost of living in Latin America and our cost-efficient management structure, you can direct more of your budget toward your team, offering locally competitive salaries while still realizing meaningful savings.
+
+This balance allows you to attract and retain exceptional talent without compromising on quality or performance.
+
           </p>
         </motion.div>
 

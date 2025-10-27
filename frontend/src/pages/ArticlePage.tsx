@@ -11,10 +11,10 @@ import { Link } from "react-router-dom";
 const articles = [
   {
     id: 1,
-    image: "/images/near.png",
-    category: "Nearshore Insights",
+    image: "/images/edition1.png",
+    category: "Edition 1: Nearshore Insights",
     date: "10.15.2025",
-    title: "The Nearshore Insider",
+    title: "Turnover: The Unseen Supply Chain Disruption",
     description:
       "Your go-to source for real insights, strategies, and stories shaping the future of nearshore staffing.",
     link: "/articles/article-Near",
@@ -23,15 +23,15 @@ const articles = [
   },
   {
     id: 2,
-    image: "/images/Customer.JPG",
-    category: "Customer Service & Growth",
+    image: "/images/edicion2.png",
+    category: "Edition 2: Customer Service & Growth ",
     date: "09.29.2025",
     title: "Customer Service: The (Often Forgotten) Engine of Growth",
     description:
       "In business, obsession with acquisition is everywhere. Companies pour millions into marketing campaigns, new sales tools, and bigger pipelines. Winning new customers feels like the ultimate goal.",
     link: "/articles/customer-service-growth",
     linkedin:
-      "https://www.linkedin.com/pulse/turnover-unseen-supply-chain-disruption-staffbridge-inc-iftje/?trackingId=u5594bg1dck7F%2FluF3MoNg%3D%3D",
+      "https://www.linkedin.com/pulse/customer-service-often-forgotten-engine-growth-staffbridge-inc-flune/?trackingId=%2BA40MjRvTC%2Bfsqf6EEdpIw%3D%3D",
   },
 ];
 
@@ -59,7 +59,7 @@ export default function ArticlePage() {
           transition={{ duration: 0.8 }}
           className="text-4xl md:text-6xl font-bold text-purple-900 drop-shadow-md"
         >
-          Insightful Articles
+          THE NEARSHORE INSIDER
         </motion.h1>
         <motion.p
           initial={{ opacity: 0 }}
@@ -67,9 +67,20 @@ export default function ArticlePage() {
           transition={{ delay: 0.5 }}
           className="mt-4 text-lg md:text-xl text-gray-700 max-w-2xl"
         >
-          Explore the latest insights on customer service, technology, and
-          innovation.
+          Your go-to source for real insights, strategies, and stories shaping the future of nearshore staffing.
         </motion.p>
+
+        <motion.a
+        href="https://www.linkedin.com/newsletters/the-nearshore-insider-7368694887665262592/"
+        target="_blank"
+        rel="noopener noreferrer"
+        whileHover={{ scale: 1.05}}
+        whileTap={{ scale: 0.95}}
+        className="mt-8 inline-block px-6 py-3 bg-purple-950 text-white font-semibold rounded-xl shadow-md hover:bg-purple-800 transition"
+
+        >
+          Follow Our newsletters
+        </motion.a>
       </section>
 
       {/* 🔹 Artículos lado a lado */}

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import {  BarChart3, Rocket, Layers } from "lucide-react";
+import {  BarChart3, Rocket, Layers, DollarSign } from "lucide-react";
 import DualBlob from "../components/DualBlob";
 import Particles from "../components/Particles";
 
@@ -8,7 +8,7 @@ const items = [
   {
     title: "Saving",
     desc: "Cut costs without compromising quality. Our model reduces payroll, hiring, and admin expenses by up to 60%.",
-   // icon: <DollarSign className="w-10 h-10 text-green-200" />,
+    icon: <DollarSign className="w-10 h-10 text-green-200" />,
     bg: "bg-gradient-to-r from-purple-950 to-purple-950",
   },
   {

@@ -48,7 +48,7 @@ export default function ExecutiveSupport() {
 
       {/* Video con texto animado */}
       <VideoTextMask
-        videoSrc="/videos/Logistics.mp4"
+        videoSrc="/videos/executive support.mp4"
         topText="EXECUTIVE"
         bottomText="SUPPORT"
       />

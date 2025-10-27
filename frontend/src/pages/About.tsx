@@ -99,9 +99,9 @@ export default function About() {
       Our Story
     </h2>
     <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-      How we got started<br /><br />
+      How we got started.<br /><br />
       We are incredibly proud of the level of service and honesty that we bring 
-      to our clients. This all started almost by accident six years ago when our 
+      to our clients. This all started almost by accident seven years ago when our 
       founder was running a small freight brokerage remotely from Medellin, Colombia. 
       One of his clients had difficulty finding an internal logistics coordinator 
       in the US. Dave told her he could hire an employee in Medellin for a fraction 

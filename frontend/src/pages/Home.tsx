@@ -1,7 +1,7 @@
 // src/pages/Home.tsx
 import { motion, useScroll,  } from "framer-motion";
 import { useRef,  } from "react";
-import { Briefcase, Languages, Clock, DollarSign, Handshake } from "lucide-react";
+import { Briefcase, Clock, DollarSign, Handshake } from "lucide-react";
 import Blob from "../components/Blob"; 
 import IndustriesCarousel from "../components/IndustriesCarousel";
 import CoreStrengths from "../components/CoreStrengths";
@@ -21,12 +21,25 @@ export default function Home() {
 
 
 const benefits = [
-  { icon: <Briefcase className="w-6 h-6 text-purple-600" />, text: "Motivated and professional" },
-  { icon: <Languages className="w-6 h-6 text-purple-600" />, text: "Bilingual talent" },
-  { icon: <Clock className="w-6 h-6 text-purple-600" />, text: "North American aligned time zones for real time collaboration" },
-  { icon: <DollarSign className="w-6 h-6 text-purple-600" />, text: "Competitive salaries at a fraction of the cost" },
-  { icon: <Handshake className="w-6 h-6 text-purple-600" />, text: "Cultural fit that ensures smooth team integration" },
+  { 
+    icon: <Briefcase className="w-6 h-6 text-purple-600" />, 
+    text: <span className="text-lg leading-relaxed">Highly motivated, bilingual professionals</span> 
+  },
+  { 
+    icon: <Clock className="w-6 h-6 text-purple-600" />, 
+    text: <span className="text-lg leading-relaxed">Seamless real-time collaboration in North American time zones</span> 
+  },
+  { 
+    icon: <DollarSign className="w-6 h-6 text-purple-600" />, 
+    text: <span className="text-lg leading-relaxed">Top-tier talent at a fraction of U.S. costs</span> 
+  },
+  { 
+    icon: <Handshake className="w-6 h-6 text-purple-600" />, 
+    text: <span className="text-lg leading-relaxed">Cultural synergy that enhances teamwork and communication</span> 
+  },
 ];
+
+
 
 
 

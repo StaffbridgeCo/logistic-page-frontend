@@ -35,7 +35,7 @@ export default function Footer() {
 
           <div className="flex space-x-4 mt-4">
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/staffbridge-inc/posts/?feedView=all"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full bg-gray-100 hover:bg-purple-100 transition"
@@ -43,7 +43,7 @@ export default function Footer() {
               <Linkedin className="w-5 h-5 text-gray-700" />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/staffbridge_crew/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full bg-gray-100 hover:bg-purple-100 transition"
@@ -65,11 +65,6 @@ export default function Footer() {
             <li><Link to="/about" className="hover:text-purple-600">About Us</Link></li>
             <li><Link to="/work-with-us" className="hover:text-purple-600">Work With Us</Link></li>
             <li><Link to="/get-started" className="hover:text-purple-600">Get Started</Link></li>
-            <li><Link to="/payroll" className="hover:text-purple-600">Payroll</Link></li>
-            <li><Link to="/logistics" className="hover:text-purple-600">Logistics</Link></li>
-            <li><Link to="/recruitment" className="hover:text-purple-600">Recruitment</Link></li>
-            <li><Link to="/office-space" className="hover:text-purple-600">Office Space</Link></li>
-            <li><Link to="/customer-service" className="hover:text-purple-600">Customer Service</Link></li>
           </ul>
         </motion.div>
 

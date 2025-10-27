@@ -56,7 +56,7 @@ export default function ItOperations() {
 
       {/* Video con texto animado */}
       <VideoTextMask
-        videoSrc="/videos/Logistics.mp4"
+        videoSrc="/videos/itOperations1.mp4"
         topText="IT"
         bottomText="OPERATIONS"
       />

@@ -1,44 +1,45 @@
 // components/FeaturesSection.tsx
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ClipboardList, MapPin, FileText, BarChart2, Bell, Route, Send } from "lucide-react";
+import {
+  Truck,
+  Headphones,
+  MapPin,
+  ClipboardList,
+  FileText,
+} from "lucide-react";
 import Particles from "./Particles";
 
-const features = [
+const roles = [
   {
-    icon: Route,
-    title: "Route Planning",
-    description: "Organize deliveries by zones, optimize routes, and reduce travel times.",
+    icon: Truck,
+    title: "Logistics Coordinators",
+    description:
+      "Manage carrier relationships, negotiate rates, and ensure loads move on time.",
   },
   {
-    icon: Send,
-    title: "Assignment",
-    description: "Assign tasks efficiently to drivers and teams in real-time.",
-  },
-  {
-    icon: ClipboardList,
-    title: "Dashboard",
-    description: "Get a complete overview of logistics operations with analytics and KPIs.",
+    icon: Headphones,
+    title: "Dispatchers",
+    description:
+      "Coordinate shipments, optimize routes, and communicate directly with drivers and clients.",
   },
   {
     icon: MapPin,
-    title: "Geolocation",
-    description: "Track vehicles and shipments live with accurate GPS integration.",
+    title: "Track & Trace Specialists",
+    description:
+      "Monitor shipments, handle updates, and resolve exceptions proactively.",
+  },
+  {
+    icon: ClipboardList,
+    title: "Carrier Sales Representatives",
+    description:
+      "Build carrier networks to secure capacity and ensure on-time delivery.",
   },
   {
     icon: FileText,
-    title: "Documents",
-    description: "Manage waybills, invoices, and delivery proofs digitally.",
-  },
-  {
-    icon: BarChart2,
-    title: "Reports",
-    description: "Generate detailed reports for performance, costs, and efficiency.",
-  },
-  {
-    icon: Bell,
-    title: "Notifications",
-    description: "Send and receive instant alerts about route changes or delays.",
+    title: "Operations Coordinators",
+    description:
+      "Maintain documentation, support compliance, and streamline back-office workflows.",
   },
 ];
 
@@ -49,22 +50,23 @@ export default function FeaturesSection() {
     <section className="py-20 bg-white relative overflow-hidden">
       {/* Section Title */}
       <div className="text-center mb-14">
-        <h3 className="text-lg font-semibold text-purple-900 tracking-wide uppercase">
-          Modular System
+        <h3 className="text-4xl md:text-5xl font-extrabold text-purple-900 tracking-tight">
+          Key Roles We Support
         </h3>
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-          Key features and functionalities of our logistics experts
+        <h2 className="text-lg md:text-xl text-gray-700 mt-3 font-medium">
+          Specialized Talent for Every Step of Your Logistics Operation
         </h2>
       </div>
-      <Particles count={30} />
 
-      {/* Features Grid */}
+      <Particles count={25} />
+
+      {/* Cards Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 max-w-6xl mx-auto px-6">
-        {features.map((feature, index) => {
-          const Icon = feature.icon;
+        {roles.map((role, index) => {
+          const Icon = role.icon;
           return (
             <motion.div
-              key={feature.title}
+              key={role.title}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -74,17 +76,16 @@ export default function FeaturesSection() {
               <div className="w-20 h-20 flex items-center justify-center rounded-full bg-purple-800 text-white shadow-lg mb-4">
                 <Icon size={32} />
               </div>
-              <p className="text-gray-800 font-medium">{feature.title}</p>
+              <p className="text-gray-800 font-medium">{role.title}</p>
             </motion.div>
           );
         })}
       </div>
 
-      {/* Small Popup */}
+      {/* Popup (Modal) */}
       <AnimatePresence>
         {selected !== null && (
           <>
-            {/* Overlay */}
             <motion.div
               className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
               initial={{ opacity: 0 }}
@@ -93,7 +94,6 @@ export default function FeaturesSection() {
               onClick={() => setSelected(null)}
             />
 
-            {/* Popup content */}
             <motion.div
               className="fixed inset-0 flex items-center justify-center z-50 px-4"
               initial={{ opacity: 0, y: 50, scale: 0.95 }}
@@ -102,7 +102,6 @@ export default function FeaturesSection() {
               transition={{ duration: 0.3 }}
             >
               <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative text-center">
-                {/* Close button */}
                 <button
                   onClick={() => setSelected(null)}
                   className="absolute top-3 right-3 text-gray-400 hover:text-gray-600"
@@ -110,27 +109,24 @@ export default function FeaturesSection() {
                   ✕
                 </button>
 
-                {/* Icon */}
                 <div className="w-20 h-20 flex items-center justify-center rounded-full bg-purple-600 text-white shadow-lg mx-auto mb-4">
-                  {/* ✅ Aquí está el fix */}
                   {(() => {
-                    const Icon = features[selected].icon;
+                    const Icon = roles[selected].icon;
                     return <Icon size={32} />;
                   })()}
                 </div>
 
-                {/* Title */}
                 <h3 className="text-xl font-bold text-purple-700 mb-3">
-                  {features[selected].title}
+                  {roles[selected].title}
                 </h3>
-
-                {/* Description */}
-                <p className="text-gray-600">{features[selected].description}</p>
+                <p className="text-gray-600">{roles[selected].description}</p>
               </div>
             </motion.div>
           </>
         )}
       </AnimatePresence>
+
+
     </section>
   );
 }

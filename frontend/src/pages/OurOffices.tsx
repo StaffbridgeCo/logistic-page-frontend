@@ -18,11 +18,11 @@ export default function OurOffices() {
     },
     {
       title: "",
-      img: "/images/comedor.JPG",
+      img: "/images/lokers.png",
     },
     {
       title: "",
-      img: "/images/people.JPG",
+      img: "/images/morePeople.JPG",
     },
   ];
 
@@ -66,7 +66,7 @@ export default function OurOffices() {
           className="relative overflow-hidden rounded-3xl shadow-lg"
         >
           <img
-            src="/images/recepcion.JPG"
+            src="/images/customer.png"
             alt="Welcome to StaffBridge"
             className="w-full h-[400px] object-cover"
           />

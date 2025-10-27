@@ -16,7 +16,7 @@ export default function CustomerServiceSection() {
     <div className="relative min-h-screen flex flex-col items-center bg-white pt-32 px-6 overflow-hidden">
       {/* Video con texto animado */}
       <VideoTextMask
-        videoSrc="/videos/Logistics.mp4" // 👈 cámbialo si tienes un video distinto
+        videoSrc="/videos/customerService2.mp4" // 👈 cámbialo si tienes un video distinto
         topText="CUSTOMER"
         bottomText="SERVICE"
       />
@@ -28,20 +28,21 @@ export default function CustomerServiceSection() {
 
         {/* Columna izquierda - Texto */}
         <div className="space-y-6 z-10">
-          <h2 className="text-4xl lg:text-5xl font-bold text-purple-900 leading-tight">
-            Top Tier Call Center Services for Your Company’s Success
-          </h2>
-          <p className="text-lg text-gray-600">
-            Call handling is time consuming and expensive to do correctly.
-            At StaffBridge, we attract higher level candidates by offering
-            better salaries and training, ensuring your customers feel
-            connected and valued.
-          </p>
-          <p className="texte-lg text-gray-600">
-            Whether you need basic call screening or full 24/7 coverage, 
-            our C1 level English speakers deliver seamless communication,
-            professional interactions, and custom solutions tailored to your business.
-          </p>
+  <h2 className="text-4xl lg:text-5xl font-bold text-purple-900 leading-tight">
+    Exceptional Service, Powered by Nearshore Talent
+  </h2>
+  <p className="text-lg text-gray-600">
+    Build high-performing customer service teams in LATAM. Fluent, empathetic, and culturally aligned professionals ready to deliver meaningful experiences for your brand.
+  </p>
+  <p className="text-lg text-gray-600">
+    Ideal customer service goes beyond answering calls it’s about creating real connections that strengthen your brand and build lasting loyalty.
+  </p>
+  <p className="text-lg text-gray-600">
+    We help U.S. companies create dedicated customer service teams in LATAM that combine empathy, skill, and efficiency to deliver experiences that truly resonate with their clients.
+  </p>
+  <p className="text-lg text-gray-600">
+    From a single customer representative to a full 24/7 support center, your team will feel like an extension of your own fluent in English, culturally aligned, and trained to provide consistent, high-quality service.
+  </p>
 
           {/* Lista de beneficios */}
           <ul className="mt-6 space-y-4 text-gray-700">

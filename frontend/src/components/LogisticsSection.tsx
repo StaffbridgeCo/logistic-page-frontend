@@ -1,6 +1,5 @@
-// components/LogisticsSection.jsx
+"use client";
 import { motion } from "framer-motion";
-import { CheckCircle, Clock, Eye, Search, TrendingDown } from "lucide-react";
 import VideoTextMask from "./VideoTextMask";
 import Particles from "./Particles";
 import Blob from "./Blob";
@@ -8,54 +7,65 @@ import Blob from "./Blob";
 export default function LogisticsSection() {
   return (
     <div className="relative min-h-screen flex flex-col items-center bg-white pt-32 px-6 overflow-hidden">
-      {/* Componente del video con texto */}
+      {/* Video superior con texto */}
       <VideoTextMask
         videoSrc="/videos/Logistics.mp4"
         topText="LOGISTICS"
-        bottomText="COORDINATION"
+        bottomText="STAFFING"
       />
 
-      {/* Sección de información debajo del video */}
+      {/* Contenido principal en dos columnas */}
       <div className="relative w-full max-w-7xl mx-auto mt-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <Particles count={30} />
         <Blob className="absolute top-20 left-50 opacity-55 z-0" />
 
         {/* Columna izquierda - Texto */}
         <div className="space-y-6 z-10">
-          <h2 className="text-4xl lg:text-5xl font-bold text-purple-900 leading-tight">
-            The human solution to organizing your <br /> logistics movements
-          </h2>
-          <p className="text-lg text-gray-600">
-            Our brokers help your organization by:
-          </p>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl lg:text-5xl font-bold text-purple-900 leading-tight"
+          >
+            Logistics Staffing Solutions
+          </motion.h2>
 
-          <ul className="mt-6 space-y-4 text-gray-700">
-            <li className="flex items-start">
-              <CheckCircle className="w-6 h-6 text-purple-600 mr-3 flex-shrink-0" />
-              Reducing the time and effort required to manage logistics.
-            </li>
-            <li className="flex items-start">
-              <TrendingDown className="w-6 h-6 text-purple-600 mr-3 flex-shrink-0" />
-              Providing highly efficient and cost saving coordination teams.
-            </li>
-            <li className="flex items-start">
-              <Eye className="w-6 h-6 text-purple-600 mr-3 flex-shrink-0" />
-              Offering more visibility and control across your entire operation.
-            </li>
-            <li className="flex items-start">
-              <Search className="w-6 h-6 text-purple-600 mr-3 flex-shrink-0" />
-              Reviewing your current strategies with a fresh, third party perspective.
-            </li>
-            <li className="flex items-start">
-              <Clock className="w-6 h-6 text-purple-600 mr-3 flex-shrink-0" />
-              Suggesting process improvements and options to save both time and money.
-            </li>
-          </ul>
+          <motion.h3
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-2xl font-semibold text-gray-800"
+          >
+            Optimize Operations, Powered by Nearshore Talent
+          </motion.h3>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.4 }}
+            className="text-lg text-gray-700 leading-relaxed"
+          >
+            The logistics world moves fast, and so should your team. From coordinating
+            dispatch to tracking shipments and managing carrier relationships, every
+            role behind the scenes plays a part in keeping your business moving.
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.6 }}
+            className="text-lg text-gray-700 leading-relaxed"
+          >
+            Through our nearshore staffing model, you can build a reliable,
+            cost-efficient logistics team in LATAM that feels fully integrated with
+            your U.S. operations. Same time zone, shared culture, and professionals who
+            take ownership of your success.
+          </motion.p>
         </div>
 
         {/* Columna derecha - Imágenes animadas */}
         <div className="relative flex justify-center lg:justify-end items-center">
-          {/* Imagen grande (dispatcher) con tooltip */}
+          {/* Imagen principal (dispatcher) */}
           <div className="relative group">
             <motion.img
               src="/images/brokers.png"
@@ -78,7 +88,7 @@ export default function LogisticsSection() {
             </div>
           </div>
 
-          {/* Imagen pequeña (driver) con tooltip */}
+          {/* Imagen secundaria (driver) */}
           <div className="relative group bottom-1 left-6 lg:left-10">
             <motion.img
               src="/images/Logistic Coordination.JPG"

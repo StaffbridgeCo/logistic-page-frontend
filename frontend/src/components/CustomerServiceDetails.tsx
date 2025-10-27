@@ -1,33 +1,33 @@
 // components/CustomerServiceDetails.tsx
 import { motion } from "framer-motion";
-import { PhoneCall, UserCheck, BarChart3, Briefcase } from "lucide-react";
+import { BarChart3, Heart, DollarSign, Languages } from "lucide-react";
 import Particles from "./Particles";
 
 export default function CustomerServiceDetails() {
   const services = [
     {
-      icon: <PhoneCall className="w-8 h-8 text-purple-600" />,
-      title: "C2 Workforce",
+      icon: <Heart className="w-8 h-8 text-purple-600" />,
+      title: "The Human Touch That Builds Loyalty",
       description:
-        "Our aim is to ensure optimal communication through a rigorous hiring process focused on selecting top English proficient individuals, guaranteeing your team’s exceptional communication abilities.",
+        "Nearshore professionals bring warmth, empathy, and strong communication skills, turning every interaction into a meaningful customer experience.",
     },
     {
-      icon: <UserCheck className="w-8 h-8 text-purple-600" />,
-      title: "Specialized Expertise",
+      icon: <DollarSign className="w-8 h-8 text-purple-600" />,
+      title: "Smarter Compensation, Stronger Retention",
       description:
-        "We offer experienced agents trained in effective communication and customer service, ensuring high quality interactions with all your clients.",
+        "Leverage nearshore cost advantages to design stable, competitive compensation packages that retain top talent and maintain service consistency.",
+    },
+    {
+      icon: <Languages className="w-8 h-8 text-purple-600" />,
+      title: "Seamless, Bilingual and Culturally Aligned Communication",
+      description:
+        "Your team speaks fluent English and Spanish and understands your customers’ cultural expectations, ensuring clarity, trust, and connection.",
     },
     {
       icon: <BarChart3 className="w-8 h-8 text-purple-600" />,
-      title: "Scalability",
+      title: "Scalable and Reliable Support",
       description:
-        "We can quickly adjust staffing levels to accommodate fluctuating call volumes, providing flexibility to meet your business demands.",
-    },
-    {
-      icon: <Briefcase className="w-8 h-8 text-purple-600" />,
-      title: "Focus on Core Functions",
-      description:
-        "By delegating customer support to us, you can dedicate more resources to core functions and strategic growth.",
+        "Whether you’re starting with a small support team or expanding to a full 24/7 center, your nearshore team grows with your business while maintaining quality and brand consistency.",
     },
   ];
 
@@ -36,14 +36,15 @@ export default function CustomerServiceDetails() {
       {/* Partículas en background */}
       <Particles count={30} className="absolute inset-0 z-0" />
 
+      {/* Sección introductoria */}
       <div className="max-w-6xl mx-auto text-center mb-16 relative z-10">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl font-bold text-purple-900 mb-6"
+          className="text-4xl lg:text-5xl font-bold text-purple-900 leading-tight mb-6"
         >
-          Your Path to Exceptional Customer Engagement and Support
+          Experience the Nearshore Advantage
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -51,10 +52,24 @@ export default function CustomerServiceDetails() {
           transition={{ duration: 0.8 }}
           className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto"
         >
-          Whether you need basic call screening or a full 24/7 call center, our
-          highly trained team ensures seamless communication, customer
-          satisfaction, and scalable solutions to meet your business demands.
+          Building a nearshore customer service team does more than optimize
+          costs it elevates your customer experience. With fluent, culturally
+          aligned professionals who understand your clients’ needs, you deliver
+          consistent, high-quality support that strengthens loyalty and drives
+          satisfaction at every interaction.
         </motion.p>
+      </div>
+
+      {/* Título de sección */}
+      <div className="max-w-6xl mx-auto text-center mb-12 relative z-10">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl lg:text-5xl font-bold text-purple-900 leading-tight mb-10"
+        >
+          Why Build Your Customer Service Team Nearshore?
+        </motion.h2>
       </div>
 
       {/* Servicios */}

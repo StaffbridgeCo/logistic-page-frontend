@@ -9,7 +9,7 @@ export default function BackOfficeSection() {
     <div className="relative min-h-screen flex flex-col items-center bg-white pt-32 px-6 overflow-hidden">
       {/* Video con texto animado */}
       <VideoTextMask
-        videoSrc="/videos/Logistics.mp4" // 👈 cambia el video si tienes uno distinto
+        videoSrc="/videos/backoffice3.mp4" // 👈 cambia el video si tienes uno distinto
         topText="BACK"
         bottomText="OFFICE"
       />
@@ -51,6 +51,18 @@ export default function BackOfficeSection() {
               Providing insights and support for better business decisions.
             </li>
           </ul>
+
+                    {/* CTA */}
+          <motion.a
+            href="https://staffbridge.co/get-started"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="mt-8 inline-block px-6 py-3 bg-purple-700 text-white font-semibold rounded-xl shadow-md hover:bg-purple-800 transition"
+          >
+            Get Started
+          </motion.a>
         </div>
 
         {/* Columna derecha - Imágenes con hover */}

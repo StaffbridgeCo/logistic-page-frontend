@@ -1,8 +1,9 @@
 import Header from "../components/Header";
 import LogisticsSection from "../components/LogisticsSection";
 import FeaturesSection from "../components/FeaturesSection";
-import StepTimeline from "../components/StepTimeline";
 import Footer from "../components/Footer";
+import LogisticsNearshoreDetails from "../components/LogisticsNearshoreDetails";
+import EmpowerSection from "../components/EmpowerSection";
 
 
 export default function Logistics() {
@@ -10,8 +11,9 @@ export default function Logistics() {
     <>
       <Header />
       <LogisticsSection />
+      <LogisticsNearshoreDetails /> {/* 👈 insertado aquí */}
       <FeaturesSection />
-      <StepTimeline />
+      <EmpowerSection />
       <Footer />
     </>
   );
