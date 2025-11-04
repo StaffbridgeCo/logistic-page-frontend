@@ -60,8 +60,8 @@ export default function FeaturesSection() {
 
       <Particles count={25} />
 
-      {/* Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 max-w-6xl mx-auto px-6">
+      {/* Cards Grid - 5 columnas fijas */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10 max-w-7xl mx-auto px-6">
         {roles.map((role, index) => {
           const Icon = role.icon;
           return (
@@ -125,8 +125,6 @@ export default function FeaturesSection() {
           </>
         )}
       </AnimatePresence>
-
-
     </section>
   );
 }

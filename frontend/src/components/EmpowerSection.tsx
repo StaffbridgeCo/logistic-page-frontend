@@ -46,7 +46,6 @@ export default function EmpowerSection() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-gray-800 text-lg font-medium mb-10"
         >
-          Let’s build the logistics team that keeps your business moving forward.
         </motion.p>
 
         {/* Botón sencillo */}

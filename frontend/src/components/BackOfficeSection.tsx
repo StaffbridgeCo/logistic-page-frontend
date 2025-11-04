@@ -22,7 +22,7 @@ export default function BackOfficeSection() {
         {/* Columna izquierda - Texto */}
         <div className="space-y-6 z-10">
           <h2 className="text-4xl lg:text-5xl font-bold text-purple-900 leading-tight">
-            The backbone of your business operations
+            The Backbone Of Your Business Operations
           </h2>
           <p className="text-lg text-gray-600">
             Our Back Office teams provide seamless support so your company runs smoothly

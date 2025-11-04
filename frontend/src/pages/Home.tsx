@@ -40,14 +40,11 @@ const benefits = [
 ];
 
 
-
-
-
   const industries = [
     { title: "Logistics Coordination", img: "/images/Logistic Coordination.JPG" },
     { title: "Back Office", img: "/images/carrucel.png" },
     { title: "Customer Center", img: "/images/Call Center.JPG" },
-    { title: "Software Development", img: "/images/Software Developer.JPG" },
+    { title: "Technology & Software Solutions", img: "/images/Software Developer.JPG" },
     { title: "Executive Support", img: "/images/Executive5.png" },
   //  { title: "Engineering Design & 3D Modeling", img: "/images/Engineering Desing & 3D Modeling.JPG" },
   ];
@@ -139,6 +136,12 @@ const benefits = [
   <h3 className="text-4xl font-semibold text-center mb-12 text-black-900">
     Our Industries
   </h3>
+
+  {/* Texto adicional */}
+  <p className="text-center text-gray-500 text-sm mt-6">
+    …and many more.
+  </p>
+
 
   <IndustriesCarousel industries={industries} />
 

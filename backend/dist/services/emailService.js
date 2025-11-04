@@ -4,10 +4,18 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.sendContactEmail = sendContactEmail;
-// backend/src/services/emailService.ts
 const nodemailer_1 = __importDefault(require("nodemailer"));
 const config_1 = __importDefault(require("../config"));
 async function sendContactEmail(payload) {
+    // 👇 AGREGA ESTE BLOQUE PARA VERIFICAR QUE .env SE CARGA BIEN
+    console.log("📬 SMTP CONFIG CHECK:", {
+        host: config_1.default.smtp.host,
+        port: config_1.default.smtp.port,
+        user: config_1.default.smtp.user,
+        hasPass: !!config_1.default.smtp.pass,
+        from: config_1.default.fromEmail,
+        to: config_1.default.toEmail,
+    });
     const transporter = nodemailer_1.default.createTransport({
         host: config_1.default.smtp.host,
         port: Number(config_1.default.smtp.port),

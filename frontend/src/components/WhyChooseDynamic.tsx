@@ -36,13 +36,17 @@ export default function WhyChooseDynamic() {
         >
           <h3 className="text-yellow-500 font-bold text-lg mb-2">WHY CHOOSE US</h3>
           <h2 className="text-4xl font-bold text-purple-900 mb-4">
-            Empowering Talent Through Culture and Cost Efficiency
+Smart Structure, Stronger Teams.
           </h2>
           <p className="text-gray-700 leading-relaxed">
             At StaffBridge, we combine a competitive cost model with a work culture that truly engages.
+          </p>
+
+          <p className="text-gray-700 leading-relaxed" >
 
 Thanks to the lower cost of living in Latin America and our cost-efficient management structure, you can direct more of your budget toward your team, offering locally competitive salaries while still realizing meaningful savings.
-
+</p>
+<p className="text-gray-700 leading-relaxed" >
 This balance allows you to attract and retain exceptional talent without compromising on quality or performance.
 
           </p>

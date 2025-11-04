@@ -1,12 +1,6 @@
 // components/CustomerServiceSection.tsx
 "use client";
 import { motion } from "framer-motion";
-import {
-  PhoneCall,
-  Users,
-  Globe2,
-  Headphones,
-} from "lucide-react";
 import VideoTextMask from "./VideoTextMask";
 import Particles from "./Particles";
 import Blob from "./Blob";
@@ -44,25 +38,7 @@ export default function CustomerServiceSection() {
     From a single customer representative to a full 24/7 support center, your team will feel like an extension of your own fluent in English, culturally aligned, and trained to provide consistent, high-quality service.
   </p>
 
-          {/* Lista de beneficios */}
-          <ul className="mt-6 space-y-4 text-gray-700">
-            <li className="flex items-start">
-              <PhoneCall className="w-6 h-6 text-purple-600 mr-3 flex-shrink-0" />
-              <span>C1 Workforce: top tier English proficient representatives.</span>
-            </li>
-            <li className="flex items-start">
-              <Users className="w-6 h-6 text-purple-600 mr-3 flex-shrink-0" />
-              <span>Specialized expertise in customer service and technical support roles.</span>
-            </li>
-            <li className="flex items-start">
-              <Globe2 className="w-6 h-6 text-purple-600 mr-3 flex-shrink-0" />
-              <span>Scalable staffing solutions that adapt to fluctuating call volumes.</span>
-            </li>
-            <li className="flex items-start">
-              <Headphones className="w-6 h-6 text-purple-600 mr-3 flex-shrink-0" />
-              <span>Let your team focus on core functions while we handle customer engagement.</span>
-            </li>
-          </ul>
+
 
           {/* CTA */}
           <motion.button

@@ -1,4 +1,3 @@
-// backend/src/services/emailService.ts
 import nodemailer from "nodemailer";
 import config from "../config";
 
@@ -8,6 +7,16 @@ export async function sendContactEmail(payload: {
   company?: string;
   message?: string;
 }) {
+  // 👇 AGREGA ESTE BLOQUE PARA VERIFICAR QUE .env SE CARGA BIEN
+  console.log("📬 SMTP CONFIG CHECK:", {
+    host: config.smtp.host,
+    port: config.smtp.port,
+    user: config.smtp.user,
+    hasPass: !!config.smtp.pass,
+    from: config.fromEmail,
+    to: config.toEmail,
+  });
+
   const transporter = nodemailer.createTransport({
     host: config.smtp.host,
     port: Number(config.smtp.port),
