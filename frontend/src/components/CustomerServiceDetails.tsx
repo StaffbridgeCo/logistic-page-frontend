@@ -33,32 +33,8 @@ export default function CustomerServiceDetails() {
 
   return (
     <section className="relative py-20 bg-gradient-to-b from-white to-white px-6 lg:px-16 overflow-hidden">
-      {/* Partículas en background */}
+      {/* Partículas */}
       <Particles count={30} className="absolute inset-0 z-0" />
-
-      {/* Sección introductoria */}
-      <div className="max-w-6xl mx-auto text-center mb-16 relative z-10">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl lg:text-5xl font-bold text-purple-900 leading-tight mb-6"
-        >
-          Experience the Nearshore Advantage
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto"
-        >
-          Building a nearshore customer service team does more than optimize
-          costs it elevates your customer experience. With fluent, culturally
-          aligned professionals who understand your clients’ needs, you deliver
-          consistent, high-quality support that strengthens loyalty and drives
-          satisfaction at every interaction.
-        </motion.p>
-      </div>
 
       {/* Título de sección */}
       <div className="max-w-6xl mx-auto text-center mb-12 relative z-10">
@@ -73,7 +49,7 @@ export default function CustomerServiceDetails() {
       </div>
 
       {/* Servicios */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 relative z-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 relative z-10 mb-20">
         {services.map((service, index) => (
           <motion.div
             key={index}
@@ -90,6 +66,50 @@ export default function CustomerServiceDetails() {
           </motion.div>
         ))}
       </div>
+
+      
+{/* Sección Experience con fondo morado */}
+<section className="relative mt-28 py-24 bg-gradient-to-br from-purple-50 via-white to-purple-100 overflow-hidden">
+
+  {/* Fondo animado */}
+  <Particles count={25} className="absolute inset-0 z-0" />
+
+  {/* Círculo decorativo difuso */}
+  <div className="absolute -top-40 left-1/2 -translate-x-1/2 
+                  w-[600px] h-[600px] bg-purple-300/30 rounded-full 
+                  blur-3xl animate-pulse" />
+
+  <motion.div
+    initial={{ opacity: 0, y: 60 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    viewport={{ once: true }}
+    className="relative text-center max-w-3xl mx-auto px-6 z-10"
+  >
+    <motion.h2
+      initial={{ scale: 0.95, opacity: 0 }}
+      whileInView={{ scale: 1, opacity: 1 }}
+      transition={{ duration: 0.6 }}
+      className="text-4xl md:text-5xl font-extrabold text-purple-900 mb-6"
+    >
+      Experience the Nearshore Advantage
+    </motion.h2>
+
+    <motion.p
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.2 }}
+      className="text-gray-700 text-lg md:text-xl mb-5 leading-relaxed"
+    >
+      Building a nearshore customer service team does more than optimize costs 
+      it elevates your customer experience. With fluent, culturally aligned 
+      professionals who understand your clients’ needs, you deliver consistent, 
+      high-quality support that strengthens loyalty and drives satisfaction at 
+      every interaction.
+    </motion.p>
+  </motion.div>
+</section>
+
     </section>
   );
 }

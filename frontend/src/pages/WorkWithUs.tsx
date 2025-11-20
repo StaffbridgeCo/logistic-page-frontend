@@ -182,6 +182,8 @@ export default function WorkWithUs() {
         </div>
       </section>
 
+
+
       {/* Descubre StaffBridge */}
       <section className="py-20 bg-gray-100 relative z-10">
         <div className="container mx-auto px-6 md:px-12 text-center">
@@ -226,6 +228,8 @@ export default function WorkWithUs() {
         </div>
       </section>
 
+
+      
       {/* Valores */}
       <section className="py-20 bg-white relative z-10">
         <div className="container mx-auto px-6 md:px-12 text-center">
@@ -263,6 +267,9 @@ export default function WorkWithUs() {
           </div>
         </div>
       </section>
+
+
+
 
       {/* Vacantes */}
       <section id="jobs" className="py-20 relative z-10">

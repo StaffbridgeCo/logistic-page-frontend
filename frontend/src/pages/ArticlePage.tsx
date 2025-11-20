@@ -79,7 +79,7 @@ export default function ArticlePage() {
         className="mt-8 inline-block px-6 py-3 bg-purple-950 text-white font-semibold rounded-xl shadow-md hover:bg-purple-800 transition"
 
         >
-          Follow Our newsletters
+          Follow Our Newsletters
         </motion.a>
       </section>
 

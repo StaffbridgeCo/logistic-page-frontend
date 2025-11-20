@@ -43,15 +43,8 @@ export default function Payroll() {
         transition={{ duration: 0.8 }}
       >
         <h1 className="text-5xl font-bold text-purple-800 mb-6">Payroll</h1>
-        <h2 className="text-2xl font-semibold text-gray-700 mb-6">
-          Seamless. Simple. Secure.
-        </h2>
-        <p className="text-lg text-gray-600 leading-relaxed">
-          Managing international payroll shouldn’t be complicated or risky. At{" "}
-          <span className="font-semibold text-purple-700">StaffBridge</span>, we handle the entire payroll 
-          process with <span className="font-semibold">full compliance</span> to local labor laws and tax 
-          regulations, so you don’t have to worry about legal or financial pitfalls.
-        </p>
+
+
       </motion.div>
 
       {/* Main Section */}
@@ -63,26 +56,39 @@ export default function Payroll() {
       >
         {/* Imagen */}
         <motion.img
-          src="/images/payroll.png" // 👈 coloca tu imagen aquí
+          src="/images/payroll.png"
           alt="Payroll process"
           className="rounded-2xl shadow-lg"
           whileHover={{ scale: 1.03 }}
           transition={{ type: "spring", stiffness: 120 }}
         />
 
-        {/* Texto */}
+        {/* Texto a la derecha COMPLETO */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
+          className="text-left"
         >
           <p className="text-lg text-gray-700 leading-relaxed mb-6">
-            From onboarding to monthly payments, we ensure your team feels 
-            supported while you enjoy complete peace of mind.  
+            Managing international payroll shouldn’t be complicated or risky. At{" "}
+            <span className="font-semibold text-purple-700">StaffBridge</span>, we handle the entire payroll 
+            process with <span className="font-semibold">full compliance</span> to local labor laws and 
+            tax regulations, so you don’t have to worry about legal or financial pitfalls.
           </p>
+
+          <h3 className="text-xl font-semibold text-purple-700 mb-4">
+            Payroll process
+          </h3>
+
+          <p className="text-lg text-gray-700 leading-relaxed mb-6">
+            From onboarding to monthly payments, we ensure your team feels supported 
+            while you enjoy complete peace of mind.
+          </p>
+
           <p className="text-lg text-gray-700 leading-relaxed">
-            No delays. No compliance headaches. Just seamless payroll 
-            management that lets you focus on growing your business.
+            No delays. No compliance headaches. Just seamless payroll management 
+            that lets you focus on growing your business.
           </p>
         </motion.div>
       </motion.section>

@@ -23,19 +23,19 @@ export default function Home() {
 const benefits = [
   { 
     icon: <Briefcase className="w-6 h-6 text-purple-600" />, 
-    text: <span className="text-lg leading-relaxed">Highly motivated, bilingual professionals</span> 
+    text: <span className="text-lg leading-relaxed">Motivated, bilingual talent</span> 
   },
   { 
     icon: <Clock className="w-6 h-6 text-purple-600" />, 
-    text: <span className="text-lg leading-relaxed">Seamless real-time collaboration in North American time zones</span> 
+    text: <span className="text-lg leading-relaxed">Real-time collaboration</span> 
   },
   { 
     icon: <DollarSign className="w-6 h-6 text-purple-600" />, 
-    text: <span className="text-lg leading-relaxed">Top-tier talent at a fraction of U.S. costs</span> 
+    text: <span className="text-lg leading-relaxed">Top talent at lower costs</span> 
   },
   { 
     icon: <Handshake className="w-6 h-6 text-purple-600" />, 
-    text: <span className="text-lg leading-relaxed">Cultural synergy that enhances teamwork and communication</span> 
+    text: <span className="text-lg leading-relaxed">Strong cultural alignment</span> 
   },
 ];
 
@@ -74,20 +74,21 @@ const benefits = [
 
 
         {/* Hero */}
-        <section
-          id="home"
-          className="flex flex-col items-center justify-center h-[75vh] text-center px-6 relative z-10"
-        >
-        <motion.h2
-          className="text-5xl md:text-7xl font-light leading-tight mb-6"
-        >
-          BUILD HIGH-PERFORMING <br />
-          TEAMS WITH{" "}
-          <span className="text-purple-950 font-semibold">TOP LATAM TALENT</span>
-        </motion.h2>
+<section
+  id="home"
+  className="flex flex-col items-center justify-center h-[45vh] text-center px-6 relative z-10"
+>
+  <motion.h2
+    className="text-5xl md:text-7xl font-light leading-tight mb-3"
+  >
+    BUILD HIGH-PERFORMING <br />
+    TEAMS WITH{" "}
+    <span className="text-purple-950 font-semibold">NEARSHORE TALENT</span>
+  </motion.h2>
+</section>
 
 
-        </section>
+
 
         {/* Why Choose LATAM */}
         <section className="relative z-10 py-12 px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -133,14 +134,16 @@ const benefits = [
 
 {/* Carrusel de Industrias estilo Coverflow */}
 <section id="industries" className="relative z-10 py-20 px-6 bg-white">
-  <h3 className="text-4xl font-semibold text-center mb-12 text-black-900">
+  <h3 className="text-4xl font-semibold text-center text-black-900 mb-4">
     Our Industries
   </h3>
 
   {/* Texto adicional */}
-  <p className="text-center text-gray-500 text-sm mt-6">
+  <p className="text-center text-gray-500 text-sm -mt-1 mb-6">
     …and many more.
   </p>
+
+
 
 
   <IndustriesCarousel industries={industries} />

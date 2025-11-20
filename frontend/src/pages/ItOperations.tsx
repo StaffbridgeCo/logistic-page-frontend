@@ -1,12 +1,13 @@
 // pages/ItOperations.tsx
 "use client";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Users,
   Network,
   ShieldCheck,
   DollarSign,
 } from "lucide-react";
+import { useState, useEffect } from "react";
 import Particles from "../components/Particles";
 import Blob from "../components/Blob";
 import Header from "../components/Header";
@@ -41,6 +42,17 @@ export default function ItOperations() {
     },
   ];
 
+  // ⭐ Estado del carrusel
+  const [showFirst, setShowFirst] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShowFirst((prev) => !prev);
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="relative min-h-screen flex flex-col items-center bg-white pt-32 px-6 overflow-hidden">
       {/* Header */}
@@ -49,7 +61,7 @@ export default function ItOperations() {
       {/* Video con texto animado */}
       <VideoTextMask
         videoSrc="/videos/itOperations1.mp4"
-        topText="Technology &"
+        topText="Tech &"
         bottomText="Software Solutions"
       />
 
@@ -62,7 +74,7 @@ export default function ItOperations() {
         {/* Columna izquierda - Texto */}
         <div className="space-y-6 z-10">
           <h1 className="text-4xl lg:text-5xl font-bold text-purple-900 leading-tight">
-            Technology & Software Solutions
+            Tech & Software Solutions
           </h1>
           <h2 className="text-2xl font-semibold text-purple-700">
             Innovate Faster, Powered by Nearshore Talent
@@ -72,11 +84,11 @@ export default function ItOperations() {
             help U.S. companies build dedicated nearshore IT and software
             development teams in LATAM, providing skilled professionals who
             integrate seamlessly with your operations.
-            </p>
-            <p className="text-lg text-gray-600">
-             From IT support to full
-            software development, your nearshore team ensures projects move
-            forward efficiently, on time, and aligned with your business goals.
+          </p>
+          <p className="text-lg text-gray-600">
+            From IT support to full software development, your nearshore team
+            ensures projects move forward efficiently, on time, and aligned with
+            your business goals.
           </p>
 
           <motion.a
@@ -91,193 +103,255 @@ export default function ItOperations() {
           </motion.a>
         </div>
 
-        {/* Columna derecha - Imágenes */}
-        <div className="relative flex justify-center lg:justify-end items-center">
-          {/* Imagen principal */}
-          <div className="relative group">
-            <motion.img
-              src="/images/carrucel.png"
-              alt="IT Operations Team"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="w-[350px] lg:w-[420px] rounded-2xl shadow-xl 
-                         z-10 transition-all duration-500 ease-out
-                         hover:z-30 hover:scale-105 hover:shadow-2xl"
-            />
-            <div
-              className="absolute -top-12 left-1/2 -translate-x-1/2 
-                         bg-gray-900 text-white text-sm font-medium px-3 py-1.5 rounded-lg
-                         opacity-0 group-hover:opacity-100 transition-opacity duration-300
-                         after:content-[''] after:absolute after:top-full after:left-1/2 after:-translate-x-1/2
-                         after:border-8 after:border-transparent after:border-t-gray-900"
-            >
-              IT Experts at Work
-            </div>
-          </div>
+        {/* ⭐⭐⭐ Columna derecha — Carrusel Automático ⭐⭐⭐ */}
+        <div className="relative flex justify-center lg:justify-end items-center w-full h-[420px] overflow-hidden">
+          <AnimatePresence mode="wait">
+            {showFirst ? (
+              <motion.div
+                key="img1"
+                initial={{ opacity: 0, x: 60 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -60 }}
+                transition={{ duration: 0.6 }}
+                className="absolute"
+              >
+                <div className="relative group">
+                  <img
+                    src="/images/carrucel.png"
+                    alt="IT Operations Team"
+                    className="w-[350px] lg:w-[420px] rounded-2xl shadow-xl 
+                               z-10 transition-all duration-500 ease-out
+                               hover:z-30 hover:scale-105 hover:shadow-2xl"
+                  />
 
-          {/* Imagen secundaria */}
-          <div className="relative group bottom-1 left-6 lg:left-10">
-            <motion.img
-              src="/images/it2.png"
-              alt="Server Infrastructure"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.3 }}
-              className="w-[180px] lg:w-[220px] rounded-2xl shadow-lg 
-                         z-20 transition-all duration-500 ease-out 
-                         hover:z-40 hover:scale-105 hover:shadow-2xl"
-            />
-            <div
-              className="absolute -top-12 left-1/2 -translate-x-1/2 
-                         bg-gray-900 text-white text-sm font-medium px-3 py-1.5 rounded-lg
-                         opacity-0 group-hover:opacity-100 transition-opacity duration-300
-                         after:content-[''] after:absolute after:top-full after:left-1/2 after:-translate-x-1/2
-                         after:border-8 after:border-transparent after:border-t-gray-900"
-            >
-              Smart Infrastructure
-            </div>
-          </div>
+                  <div
+                    className="absolute -top-12 left-1/2 -translate-x-1/2 
+                               bg-gray-900 text-white text-sm font-medium px-3 py-1.5 rounded-lg
+                               opacity-0 group-hover:opacity-100 transition-opacity duration-300
+                               after:content-[''] after:absolute after:top-full after:left-1/2 after:-translate-x-1/2
+                               after:border-8 after:border-transparent after:border-t-gray-900"
+                  >
+                    IT Experts at Work
+                  </div>
+                </div>
+              </motion.div>
+            ) : (
+              <motion.div
+                key="img2"
+                initial={{ opacity: 0, x: 60 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -60 }}
+                transition={{ duration: 0.6 }}
+                className="absolute"
+              >
+                <div className="relative group">
+                  <img
+                    src="/images/it2.png"
+                    alt="Server Infrastructure"
+                    className="w-[350px] lg:w-[420px] rounded-2xl shadow-xl 
+                               z-10 transition-all duration-500 ease-out
+                               hover:z-30 hover:scale-105 hover:shadow-2xl"
+                  />
+
+                  <div
+                    className="absolute -top-12 left-1/2 -translate-x-1/2 
+                               bg-gray-900 text-white text-sm font-medium px-3 py-1.5 rounded-lg
+                               opacity-0 group-hover:opacity-100 transition-opacity duration-300
+                               after:content-[''] after:absolute after:top-full after:left-1/2 after:-translate-x-1/2
+                               after:border-8 after:border-transparent after:border-t-gray-900"
+                  >
+                    Smart Infrastructure
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </div>
 
- {/* Services Section */}
-<section className="relative py-20 px-6 lg:px-16 max-w-7xl mx-auto">
-  <div className="text-center mb-16">
+      {/* Services Section */}
+      <section className="relative py-20 px-6 lg:px-16 max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl font-bold text-purple-900 mb-6"
+          >
+            Advantages of Nearshore Technology Staff
+          </motion.h2>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 relative z-10">
+          {services.map((service, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
+              className="p-8 bg-white shadow-md rounded-2xl hover:shadow-xl transition text-center flex flex-col items-center"
+            >
+              <div className="flex justify-center items-center">
+                {service.icon}
+              </div>
+              <h3 className="text-xl font-semibold text-purple-800 mb-2">
+                {service.title}
+              </h3>
+              <p className="text-gray-600">{service.description}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+{/* Most Requested Roles Section */}
+<section className="relative py-20 px-6 lg:px-16 bg-white w-full">
+  <div className="max-w-6xl mx-auto text-center mb-16">
     <motion.h2
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="text-4xl font-bold text-purple-900 mb-6"
+      className="text-4xl font-bold text-purple-900"
     >
-      Advantages of Nearshore Technology Staff
+      Most Requested Roles
     </motion.h2>
   </div>
 
-  {/* ✅ Cambié las columnas para que haya 4 en pantallas grandes */}
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 relative z-10">
-    {services.map((service, index) => (
-      <motion.div
-        key={index}
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: index * 0.15 }}
-        className="p-8 bg-white shadow-md rounded-2xl hover:shadow-xl transition text-center flex flex-col items-center"
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+
+    {/* Card 1 - IT Support */}
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="bg-white border border-purple-200/50 rounded-2xl shadow-sm hover:shadow-lg transition p-10"
+    >
+      <h3 className="text-2xl font-semibold text-purple-900 mb-6 text-center">
+        IT Support
+      </h3>
+
+      <div className="flex flex-wrap gap-3 justify-center">
+        {[
+          "Technical Support Specialist",
+          "Help Desk Technician",
+          "Network & System Administrator",
+          "Cloud Support Specialist",
+          "IT Operations Analyst",
+          "Cybersecurity Support Analyst",
+          "Application Support Engineer",
+          "IT Asset Management"
+        ].map((role, i) => (
+          <motion.span
+            key={i}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: i * 0.1 }}
+            className="px-4 py-2 rounded-full bg-purple-100 text-purple-800 text-sm font-medium shadow-sm"
+          >
+            {role}
+          </motion.span>
+        ))}
+      </div>
+
+      <motion.a
+        href="https://staffbridge.co/get-started"
+        target="_blank"
+        rel="noopener noreferrer"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="mt-10 block text-center px-6 py-3 bg-purple-700 text-white font-semibold rounded-xl shadow-md hover:bg-purple-800 transition"
       >
-        <div className="flex justify-center items-center">
-          {service.icon}
-        </div>
-        <h3 className="text-xl font-semibold text-purple-800 mb-2">
-          {service.title}
-        </h3>
-        <p className="text-gray-600">{service.description}</p>
-      </motion.div>
-    ))}
+        Get Started
+      </motion.a>
+    </motion.div>
+
+    {/* Card 2 - Software Development */}
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className="bg-white border border-purple-200/50 rounded-2xl shadow-sm hover:shadow-lg transition p-10"
+    >
+      <h3 className="text-2xl font-semibold text-purple-900 mb-6 text-center">
+        Software Development
+      </h3>
+
+      <div className="flex flex-wrap gap-3 justify-center">
+        {[
+          "Full-Stack Developer",
+          "Back-End Developer",
+          "Front-End Developer",
+          "QA Engineer / Automation",
+          "DevOps Engineer / SRE",
+          "UI/UX Designer",
+          "Data Scientist / AI / ML",
+          "Product Manager (Tech)"
+        ].map((role, i) => (
+          <motion.span
+            key={i}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: i * 0.1 }}
+            className="px-4 py-2 rounded-full bg-purple-100 text-purple-800 text-sm font-medium shadow-sm"
+          >
+            {role}
+          </motion.span>
+        ))}
+      </div>
+
+      <motion.a
+        href="https://staffbridge.co/get-started"
+        target="_blank"
+        rel="noopener noreferrer"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="mt-10 block text-center px-6 py-3 bg-purple-700 text-white font-semibold rounded-xl shadow-md hover:bg-purple-800 transition"
+      >
+        Get Started
+      </motion.a>
+    </motion.div>
+
   </div>
 </section>
 
 
-      {/* Nearshore Talent Section */}
-      <section className="relative py-20 px-6 bg-purple-50 w-full">
-        <div className="max-w-4xl mx-auto text-center space-y-6">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl lg:text-4xl font-bold text-purple-900"
-          >
-            Nearshore talent that accelerates your innovation
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-lg text-gray-700 max-w-3xl mx-auto"
-          >
-            Our professionals are fluent in English, culturally aligned, and
-            trained to deliver high-quality results, helping you reduce costs,
-            scale teams quickly, and maintain operational excellence.
-          </motion.p>
-        </div>
-      </section>
 
-      {/* Most Requested Roles Section */}
-      <section className="relative py-20 px-6 lg:px-16 bg-white w-full">
-        <div className="max-w-6xl mx-auto text-center mb-16">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-4xl font-bold text-purple-900"
-          >
-            Most Requested Roles
-          </motion.h2>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto">
-          {/* Card 1 - IT Support */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="bg-purple-50 rounded-2xl shadow-md hover:shadow-xl transition p-8 flex flex-col"
-          >
-            <h3 className="text-2xl font-semibold text-purple-800 mb-4 text-center">
-              IT Support
-            </h3>
-            <ul className="text-gray-700 text-left space-y-2 list-disc list-inside">
-              <li>Technical Support Specialist</li>
-              <li>Help Desk Technician</li>
-              <li>Network & System Administrator</li>
-              <li>Cloud Support Specialist</li>
-              <li>IT Operations Analyst</li>
-              <li>Cybersecurity Support Analyst</li>
-              <li>Application Support Engineer</li>
-            </ul>
-            <motion.a
-              href="https://staffbridge.co/get-started"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="mt-8 inline-block px-6 py-3 bg-purple-700 text-white font-semibold rounded-xl shadow-md hover:bg-purple-800 transition self-center"
-            >
-              Get Started
-            </motion.a>
-          </motion.div>
+<section className="relative w-full py-24 bg-gradient-to-br from-purple-50 via-white to-purple-100 overflow-hidden">
 
-          {/* Card 2 - Software Development */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="bg-purple-50 rounded-2xl shadow-md hover:shadow-xl transition p-8 flex flex-col"
-          >
-            <h3 className="text-2xl font-semibold text-purple-800 mb-4 text-center">
-              Software Development
-            </h3>
-            <ul className="text-gray-700 text-left space-y-2 list-disc list-inside">
-              <li>Full-Stack Developer</li>
-              <li>Back-End Developer</li>
-              <li>Front-End Developer</li>
-              <li>QA Engineer / Test Automation Specialist</li>
-              <li>DevOps Engineer / SRE</li>
-              <li>UI/UX Designer</li>
-              <li>Data Scientist / AI-ML Specialist</li>
-            </ul>
-            <motion.a
-              href="https://staffbridge.co/get-started"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="mt-8 inline-block px-6 py-3 bg-purple-700 text-white font-semibold rounded-xl shadow-md hover:bg-purple-800 transition self-center"
-            >
-              Get Started
-            </motion.a>
-          </motion.div>
-        </div>
-      </section>
+  {/* Fondo animado */}
+  <Particles count={25} className="absolute inset-0 z-0" />
+
+  {/* Círculo difuso morado */}
+  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
+                  w-[800px] h-[800px] bg-purple-300/30 rounded-full 
+                  blur-3xl opacity-70 animate-pulse" />
+
+  {/* Contenido */}
+  <div className="relative max-w-4xl mx-auto text-center space-y-6 px-6 z-10">
+
+    <motion.h2
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="text-3xl lg:text-4xl font-bold text-purple-900"
+    >
+      Nearshore talent that accelerates your innovation
+    </motion.h2>
+
+    <motion.p
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.2 }}
+      className="text-lg text-gray-700 max-w-3xl mx-auto"
+    >
+      Our professionals are fluent in English, culturally aligned, and trained
+      to deliver high-quality results, helping you reduce costs, scale teams
+      quickly, and maintain operational excellence.
+    </motion.p>
+
+  </div>
+</section>
+
 
       <Footer />
     </div>

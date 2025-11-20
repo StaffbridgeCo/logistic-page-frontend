@@ -8,13 +8,16 @@ export default function GetStarted() {
     name: "",
     email: "",
     company: "",
+    phone: "",
     message: ""
   });
 
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setForm({
       ...form,
       [e.target.name]: e.target.value
@@ -37,10 +40,19 @@ export default function GetStarted() {
 
       if (!res.ok) {
         const data = await res.json();
-        alert("Error: " + (data?.errors?.join?.(", ") || data?.message || "Unknown"));
+        alert(
+          "Error: " +
+            (data?.errors?.join?.(", ") || data?.message || "Unknown")
+        );
       } else {
         setSubmitted(true);
-        setForm({ name: "", email: "", company: "", message: "" });
+        setForm({
+          name: "",
+          email: "",
+          company: "",
+          phone: "",
+          message: ""
+        });
         setTimeout(() => setSubmitted(false), 3000);
       }
     } catch (err) {
@@ -70,25 +82,25 @@ export default function GetStarted() {
             className="flex flex-col justify-center"
           >
             <h1 className="text-4xl font-bold text-gray-900 mb-6 leading-snug">
-              Kickstart Your <span className="text-purple-600">Journey</span> with Us
+              Kickstart Your{" "}
+              <span className="text-purple-600">Journey</span> with Us
             </h1>
             <p className="text-gray-700 text-lg mb-6">
-              Whether you're looking to optimize workflows, improve customer experiences,
-              or scale your business, our team is ready to help you succeed.
+              Share a few details and our team will connect with you to
+              understand your needs and guide you toward the right nearshore
+              solution. Whether you’re building a team, improving operations, or
+              exploring new growth opportunities, we’re here to make the process
+              simple and effective.
             </p>
 
             <ul className="space-y-3 text-gray-700 font-medium">
               <li className="flex items-start">
                 <span className="text-purple-600 font-bold mr-2">•</span>
-                Streamline operations with smart automation
+                Tailored recommendations based on your goals
               </li>
               <li className="flex items-start">
                 <span className="text-purple-600 font-bold mr-2">•</span>
-                Gain insights with detailed analytics
-              </li>
-              <li className="flex items-start">
-                <span className="text-purple-600 font-bold mr-2">•</span>
-                Dedicated support team for your growth
+                Clear guidance to help you take the next step confidently
               </li>
             </ul>
           </motion.div>
@@ -103,6 +115,7 @@ export default function GetStarted() {
             <h2 className="text-2xl font-semibold text-gray-900 mb-6">
               Get Started Today
             </h2>
+
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
                 <label className="block text-sm font-medium text-gray-700">
@@ -140,6 +153,21 @@ export default function GetStarted() {
                   name="company"
                   type="text"
                   value={form.company}
+                  onChange={handleChange}
+                  required
+                  className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500"
+                />
+              </div>
+
+              {/* PHONE FIELD */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Phone Number *
+                </label>
+                <input
+                  name="phone"
+                  type="tel"
+                  value={form.phone}
                   onChange={handleChange}
                   required
                   className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500"

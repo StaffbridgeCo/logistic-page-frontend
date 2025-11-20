@@ -10,13 +10,29 @@ export default function ArticleDetailPage() {
     <div className="min-h-screen bg-gray-50 text-gray-900 overflow-hidden relative">
       <Header />
 
-      {/* Fondo decorativo */}
+      {/* Banner superior */}
+<section
+  className="w-full h-[35vh] md:h-[50vh] bg-cover bg-center relative"
+  style={{
+    backgroundImage: "url('/images/banner.png')",
+  }}
+>
+  {/* Oscurecer un poco la imagen para que se vea mejor el texto (opcional) */}
+  <div className="absolute inset-0 bg-black/30"></div>
+
+  <div className="relative z-10 h-full flex items-center justify-center">
+
+  </div>
+</section>
+
+
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(168,85,247,0.1),transparent_70%)]"></div>
       <Particles count={25} />
       <Blob className="absolute top-40 left-10 opacity-30 z-0" />
       <Blob className="absolute bottom-20 right-20 opacity-20 z-0" />
 
-      {/* Hero Section */}
+
+
       <section className="relative w-full h-[40vh] flex flex-col items-center justify-center text-center px-6">
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
@@ -32,7 +48,6 @@ export default function ArticleDetailPage() {
         </p>
       </section>
 
-      {/* Main Content */}
       <section className="relative max-w-4xl mx-auto px-6 py-12 z-10">
         <article className="prose prose-lg prose-purple max-w-none leading-loose space-y-6">
           <p>
@@ -49,21 +64,20 @@ export default function ArticleDetailPage() {
             estimated $75 billion a year.
           </p>
 
-          <h2>More Than a Cost Center</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-purple-900">More Than a Cost Center</h2>
           <p>
             For too long, customer service has been treated as an expense to
             minimize rather than a strategy to maximize. Yet the evidence points
-            in a different direction. According to PwC,{" "}
-            <strong>86% of consumers are willing to pay more for a better experience</strong>.
-            In other words, service isn’t just about solving problems; it
-            directly drives revenue.
+            in a different direction. According to PwC, <strong>86% of consumers are
+            willing to pay more for a better experience</strong>. In other words, service
+            isn’t just about solving problems; it directly drives revenue.
           </p>
           <p>
             Think about it: the fastest way to lose a customer isn’t a bad
             product, it’s a bad interaction.
           </p>
 
-          <h2>The Human Factor</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-purple-900">The Human Factor</h2>
           <p>
             Technology can streamline support, but what customers remember is
             how they felt during an interaction. A warm call, a patient
@@ -71,13 +85,13 @@ export default function ArticleDetailPage() {
             of a brand.
           </p>
           <p>
-            In fact, Microsoft’s global survey found that{" "}
-            <strong>58% of consumers consider customer service a key factor in brand loyalty</strong>.
-            People don’t stay because you’re perfect; they stay because you show
-            up when it matters.
+            In fact, Microsoft’s global survey found that <strong>58% of consumers
+            consider customer service a key factor in brand loyalty</strong>. People
+            don’t stay because you’re perfect; they stay because you show up when
+            it matters.
           </p>
 
-          <h2>The Scaling Challenge</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-purple-900">The Scaling Challenge</h2>
           <p>
             Here’s the hard part: delivering high quality service at scale. It
             means building teams that are skilled, empathetic, and aligned with
@@ -89,7 +103,7 @@ export default function ArticleDetailPage() {
             churn and higher lifetime value.
           </p>
 
-          <h2>The Future of Growth</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-purple-900">The Future of Growth</h2>
           <p>
             Customer service is no longer “nice to have.” It’s the backbone of
             sustainable business. When companies view it as a growth engine
@@ -101,7 +115,7 @@ export default function ArticleDetailPage() {
             control, or as a strategic advantage to grow?
           </blockquote>
 
-          <h2>The Nearshore Advantage</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-purple-900">The Nearshore Advantage</h2>
           <p>
             Customer expectations are higher than ever, and scaling support
             quickly is essential. But what if we could add something uniquely
@@ -112,20 +126,20 @@ export default function ArticleDetailPage() {
           </p>
           <ul>
             <li>
-              <strong>Cultural alignment & language fluency</strong> teams
-              that understand your customers and communicate naturally.
+              <strong>Cultural alignment & language fluency</strong> teams that
+              understand your customers and communicate naturally.
             </li>
             <li>
-              <strong>Time zone proximity</strong> real time collaboration
-              without delays or misalignment.
+              <strong>Time zone proximity</strong> real time collaboration without
+              delays or misalignment.
             </li>
             <li>
-              <strong>Cost efficient structures</strong> smart ways to grow
-              your team while reinvesting in quality.
+              <strong>Cost efficient structures</strong> smart ways to grow your
+              team while reinvesting in quality.
             </li>
             <li>
-              <strong>High retention rates</strong> professionals who feel
-              well compensated and valued stay longer, providing consistency and
+              <strong>High retention rates</strong> professionals who feel well
+              compensated and valued stay longer, providing consistency and
               reliability.
             </li>
           </ul>

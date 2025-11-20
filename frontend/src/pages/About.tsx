@@ -68,24 +68,28 @@ export default function About() {
   <Particles count={30} className="absolute inset-0 z-0" />
 
   {/* Contenedor de imágenes */}
-<div className="flex flex-col gap-6 md:w-1/2 z-10"> {/* <- Cambié gap-4 a gap-6 */}
+<div className="flex flex-col gap-6 md:w-1/2 z-10">
   <motion.img
-    src="/images/dave.JPG"
+    src="/images/DaveAbout2.png"
     alt="Our Story 1"
-    className="rounded-2xl shadow-lg"
+    className="rounded-2xl shadow-lg w-3/4 mx-auto"
     initial={{ opacity: 0, x: -40 }}
     whileInView={{ opacity: 1, x: 0 }}
     transition={{ duration: 0.6 }}
   />
+
   <motion.img
     src="/images/aboutUs.JPG"
     alt="Our Story 2"
-    className="rounded-2xl shadow-lg"
+    className="rounded-2xl shadow-lg w-3/4 mx-auto"
     initial={{ opacity: 0, x: -40 }}
     whileInView={{ opacity: 1, x: 0 }}
     transition={{ duration: 0.6, delay: 0.2 }}
   />
 </div>
+
+
+
 
 
   {/* Contenedor de texto */}

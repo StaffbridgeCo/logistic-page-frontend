@@ -95,28 +95,51 @@ export default function LifeAtStaffbridge() {
         </motion.div>
       </section>
 
-      {/* Culture Section */}
-      <section className="bg-white py-20 text-center px-6">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl font-bold text-purple-700 mb-10"
-        >
-          Our Culture
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          className="max-w-4xl mx-auto text-gray-600 text-lg"
-        >
+
+
+      
+{/* Sección Experience con fondo morado */}
+<section className="relative mt-28 py-24 bg-gradient-to-br from-purple-50 via-white to-purple-100 overflow-hidden">
+
+  {/* Fondo animado */}
+  <Particles count={25} className="absolute inset-0 z-0" />
+
+  {/* Círculo decorativo difuso */}
+  <div className="absolute -top-40 left-1/2 -translate-x-1/2 
+                  w-[600px] h-[600px] bg-purple-300/30 rounded-full 
+                  blur-3xl animate-pulse" />
+
+  <motion.div
+    initial={{ opacity: 0, y: 60 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    viewport={{ once: true }}
+    className="relative text-center max-w-3xl mx-auto px-6 z-10"
+  >
+    <motion.h2
+      initial={{ scale: 0.95, opacity: 0 }}
+      whileInView={{ scale: 1, opacity: 1 }}
+      transition={{ duration: 0.6 }}
+      className="text-4xl md:text-5xl font-extrabold text-purple-900 mb-6"
+    >
+Our Culture
+    </motion.h2>
+
+    <motion.p
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.2 }}
+      className="text-gray-700 text-lg md:text-xl mb-5 leading-relaxed"
+    >
           At Staffbridge, we celebrate diversity, encourage creativity, and
           support personal growth. Our team thrives on collaboration, innovation,
           and a shared passion for excellence making every project an exciting
           opportunity to learn and create something meaningful together.
-        </motion.p>
-      </section>
+    </motion.p>
+  </motion.div>
+</section>
+
+
 
       {/* Carousel Section */}
       <section className="relative py-20 bg-gray-100">

@@ -1,7 +1,8 @@
 // src/pages/Retention.tsx
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { PartyPopper, HeartHandshake, Users, Trophy, HelpingHand } from "lucide-react";
 import Header from "../components/Header";
+import { useEffect } from "react";
 
 export default function Retention() {
   const features = [
@@ -32,6 +33,34 @@ export default function Retention() {
     },
   ];
 
+  const images = [
+  "/images/cupCakes.png",
+  "/images/JhonYmas.png",
+  "/images/LuisaYmas.png",
+  "/images/life-staffbridge.png",
+];
+
+const controls = useAnimation();
+
+useEffect(() => {
+  const totalWidth = images.length * 420;
+  const loop = async () => {
+    while (true) {
+      await controls.start({
+        x: [-0, -totalWidth],
+        transition: {
+          duration: 25,
+          ease: "linear",
+        },
+      });
+      controls.set({ x: 0 });
+    }
+  };
+  loop();
+}, [controls, images.length]);
+
+
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 py-20 px-6">
       {/* Hero Section */}
@@ -61,15 +90,22 @@ export default function Retention() {
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.7 }}
+
+        
       >
-{/* Imagen */}
-<motion.img
-  src="/images/cupCakes.png"
-  alt="Team Retention"
-  className="w-full max-w-3xl h-auto rounded-2xl shadow-lg object-contain mx-auto"
-  whileHover={{ scale: 1.03 }}
-  transition={{ type: 'spring', stiffness: 120 }}
-/>
+{/* Carousel */}
+<div className="overflow-hidden rounded-2xl shadow-lg w-[400px] h-[280px] mx-auto">
+  <motion.div className="flex gap-4" animate={controls}>
+    {[...images, ...images].map((src, index) => (
+      <img
+        key={index}
+        src={src}
+        alt=""
+        className="rounded-2xl w-[400px] h-[280px] object-cover shadow-md pointer-events-none"
+      />
+    ))}
+  </motion.div>
+</div>
 
         {/* Texto */}
         <motion.div
