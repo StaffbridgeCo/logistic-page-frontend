@@ -89,7 +89,7 @@ Through our nearshore staffing model, you can build a reliable, cost-efficient l
                   {/* 🔥 MISMO TAMAÑO PARA TODAS LAS IMÁGENES */}
                   <div className="w-[380px] h-[380px] lg:w-[420px] lg:h-[420px] rounded-2xl overflow-hidden shadow-xl">
                     <img
-                      src="/images/brokers.png"
+                      src="/images/logi.JPG"
                       alt="Dispatcher preview"
                       className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
                     />
@@ -121,7 +121,7 @@ Through our nearshore staffing model, you can build a reliable, cost-efficient l
                   {/* 🔥 MISMO TAMAÑO PARA TODAS LAS IMÁGENES */}
                   <div className="w-[380px] h-[380px] lg:w-[420px] lg:h-[420px] rounded-2xl overflow-hidden shadow-xl">
                     <img
-                      src="/images/Logistic Coordination.JPG"
+                      src="/images/banner.png"
                       alt="Driver preview"
                       className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
                     />

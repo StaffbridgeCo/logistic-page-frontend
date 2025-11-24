@@ -99,7 +99,7 @@ export default function BackOfficeSection() {
                   {/* 🔥 Imágenes de tamaño uniforme */}
                   <div className="w-[380px] h-[380px] lg:w-[420px] lg:h-[420px] rounded-2xl overflow-hidden shadow-xl">
                     <img
-                      src="/images/BackOffice1.JPG"
+                      src="/images/CustomerService5.JPG"
                       alt="Back Office Team"
                       className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
                     />
@@ -131,7 +131,7 @@ export default function BackOfficeSection() {
                   {/* 🔥 Imágenes de tamaño uniforme */}
                   <div className="w-[380px] h-[380px] lg:w-[420px] lg:h-[420px] rounded-2xl overflow-hidden shadow-xl">
                     <img
-                      src="/images/BackOffice2.JPG"
+                      src="/images/monica.png"
                       alt="Back Office Desk"
                       className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
                     />
