@@ -65,6 +65,16 @@ export default function Footer() {
             <li><Link to="/about" className="hover:text-purple-600">About Us</Link></li>
             <li><Link to="/work-with-us" className="hover:text-purple-600">Work With Us</Link></li>
             <li><Link to="/get-started" className="hover:text-purple-600">Get Started</Link></li>
+              <li>
+    <a
+      href="https://comisiones-frontend.onrender.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:text-purple-600"
+    >
+      Our Platform
+    </a>
+  </li>
           </ul>
         </motion.div>
 
